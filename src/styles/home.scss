@@ -1,0 +1,75 @@
+h1{
+    
+    color:black;
+}
+    
+    
+#back{
+     background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-image:url("https://images.alphacoders.com/519/thumb-1920-519509.jpg");
+}
+
+#totalCal {
+    width:180px;
+    height:45px;
+    background-color:red;
+    border-style:outset;
+    border-color: gray;
+    transform:translate(105px, -5px);
+     
+     
+    
+    
+}
+
+#total2 {
+   
+    width:180px;
+    height:45px;
+    background-color:green;
+    border-style:outset;
+    border-color: gray;
+    transform:translate(470px,-5px);
+   
+    
+    
+}
+
+#plus {
+    transform:translate(15px, -20px)
+    
+}
+    
+
+#search {
+    width:500px;
+    height:45px;
+    background-color:gray;
+    border-color: black;
+    border-style:solid;
+    
+    
+}
+
+#user {
+    color:white;
+    
+}
+
+#main {
+    
+    background-color:yellow;
+}
+
+
+#arrow{
+
+color:black;
+
+}
+
+#arrow2{
+color:black;
+}
