@@ -1,10 +1,11 @@
 import React from "react";
+import "../../styles/table.scss";
 
 export class Table extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<table className="table table-bordered table-dark mt-auto">
+				<table className="table table-bordered table-dark mt-auto" id="table">
 					<thead>
 						<tr>
 							<th scope="col" className="text-center">
@@ -21,6 +22,7 @@ export class Table extends React.Component {
 							</th>
 						</tr>
 					</thead>
+
 					<tbody>
 						<tr>
 							<th scope="row" />
