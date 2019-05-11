@@ -17,20 +17,16 @@ export class Navbar extends React.Component {
 						</Link>
 						<span className="text-light">Welcome, User!</span>
 
-						<i className="far fa-user ml-auto p-3" id="user">
-							{" "}
-							Logout{" "}
-						</i>
-
 						<Dropdown>
 							<Dropdown.Toggle variant="info" id="dropdown-basic">
-								Dropdown Button
+								Profile
 							</Dropdown.Toggle>
 
 							<Dropdown.Menu>
-								<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-								<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-								<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+								<Dropdown.Item href="#/action-1">Monthly View</Dropdown.Item>
+								<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
+								<Dropdown.Divider />
+								<Dropdown.Item href="#/action-2">Sign Out</Dropdown.Item>
 							</Dropdown.Menu>
 						</Dropdown>
 					</div>

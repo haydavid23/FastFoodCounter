@@ -1,6 +1,22 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			day: new Date(),
+			previousDay: "",
+			months: [
+				"January",
+				"February",
+				"March",
+				"April",
+				"May",
+				"June",
+				"July",
+				"August",
+				"September",
+				"October",
+				"November",
+				"December"
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +31,11 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
+			changeDay: () => {
+				const store = getStore();
+				let demo = store.day.getDate() - 1;
+				setStore({ previousDay: demo });
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
