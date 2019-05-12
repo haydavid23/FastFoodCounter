@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
 import Dropdown from "react-bootstrap/Dropdown";
+import PropTypes from "prop-types";
 
 export class Navbar extends React.Component {
 	render() {
@@ -26,7 +27,9 @@ export class Navbar extends React.Component {
 								<Dropdown.Item href="#/action-1">Monthly View</Dropdown.Item>
 								<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
 								<Dropdown.Divider />
-								<Dropdown.Item href="#/action-2">Sign Out</Dropdown.Item>
+								<Dropdown.Item href="#/action-2" onClick={() => this.props.onDelete()}>
+									Sign Out
+								</Dropdown.Item>
 							</Dropdown.Menu>
 						</Dropdown>
 					</div>
@@ -35,3 +38,7 @@ export class Navbar extends React.Component {
 		);
 	}
 }
+
+Navbar.propTypes = {
+	onDelete: PropTypes.func
+};
