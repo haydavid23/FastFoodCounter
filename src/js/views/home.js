@@ -4,6 +4,7 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import Button from "react-bootstrap/Button";
 
 export class Home extends React.Component {
 	constructor() {
@@ -40,7 +41,6 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<div id="ove">
-									<Table onDelete={() => this.setState({ showModal: true })} />
 									<Table onDelete={() => this.setState({ showModal: true })} />
 
 									<ModalPlan

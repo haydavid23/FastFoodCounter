@@ -29,7 +29,7 @@ export class Table extends React.Component {
 					<tbody>
 						<tr>
 							<th scope="row" />
-							<th scope="row" />
+							<th scope="row"> 400 </th>
 							<th scope="row">
 								<Button variant="link" onClick={() => this.props.onDelete()}>
 									View Workout
@@ -39,6 +39,9 @@ export class Table extends React.Component {
 						</tr>{" "}
 					</tbody>
 				</table>
+				<div>
+					<i className="far fa-minus-square fa-3x float-right" />
+				</div>
 			</div>
 		);
 	}
