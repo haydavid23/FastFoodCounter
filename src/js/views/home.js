@@ -51,9 +51,6 @@ export class Home extends React.Component {
 								<i className="fas fa-plus" id="plus">
 									<span className="font-weight-bold">Add Another Food Item</span>
 								</i>
-								<div id="total2" className="text-white d-inline-block p-2 text-center">
-									Total Burned Calories
-								</div>
 								<br />
 								<br />
 								<br />

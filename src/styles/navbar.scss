@@ -12,3 +12,27 @@
 
     color:white;
 }
+
+#totalCal {
+    width:180px;
+    height:50px;
+    background-color:red;
+    border-style:outset;
+    border-color: gray;
+    transform:translate(105px, -5px);
+    text-decoration: underline;
+    font-weight: 700;
+
+}
+
+#totalCal2 {
+    width:180px;
+    height:60px;
+    background-color:green;
+    border-style:outset;
+    border-color: gray;
+
+    text-decoration: underline;
+    font-weight: 700;
+
+}

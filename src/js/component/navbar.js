@@ -15,12 +15,20 @@ export class Navbar extends React.Component {
 							<span className="navbar-brand mb-0 h1" id="navb">
 								Fast Food Counter
 							</span>
-							<div id="total2" className="text-white d-inline-block p-2 text-center">
-								Total Calories
-								<span className="badge badge-light">4</span>
-							</div>
 						</Link>
+						<div>
+							<div id="totalCal" className="text-white d-inline-block p-2 text-center">
+								Total Calories
+								<span className="badge badge-light">1000</span>
+							</div>
+						</div>
 						<span className="text-light">Welcome, User!</span>
+						<div>
+							<div id="totalCal2" className="text-white d-inline-block p-2 text-center">
+								Total Burned Calories
+								<span className="badge badge-light">1000</span>
+							</div>
+						</div>
 
 						<Dropdown>
 							<Dropdown.Toggle variant="info" id="dropdown-basic">
