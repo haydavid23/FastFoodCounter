@@ -57,9 +57,28 @@ export class Home extends React.Component {
 									Total Burned Calories
 								</div>
 								<ProgressBar id="bar">
-									<ProgressBar className="mw-100" striped variant="danger" now={1000} key={1} />
-									<ProgressBar striped variant="warning" now={700} key={2} />
-									<ProgressBar className="mw-100" variant="success" now={300} key={3} />
+									<ProgressBar
+										className="mw-100"
+										striped
+										variant="danger"
+										now={1000}
+										key={1}
+										label={"Total Calories Intake"}
+									/>
+									<ProgressBar
+										striped
+										variant="warning"
+										now={700}
+										key={2}
+										label={"Left Over Calories"}
+									/>
+									<ProgressBar
+										className="mw-100"
+										variant="success"
+										now={300}
+										key={3}
+										label={"Total Calories Burned"}
+									/>
 								</ProgressBar>
 								;
 							</div>
