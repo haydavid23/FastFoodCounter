@@ -37,7 +37,15 @@ export class ModalPlan extends React.Component {
 										)}
 									</div>
 									<div className="modal-body">
-										<p>100 sit-ups under 3 min</p>
+										<div className="form-check">
+											<input
+												className="form-check-input"
+												type="checkbox"
+												value=""
+												id="defaultCheck1"
+											/>
+											<label className="form-check-label">Default checkbox</label>
+										</div>
 									</div>
 									<div className="modal-footer">
 										<button
