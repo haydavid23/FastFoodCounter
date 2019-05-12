@@ -3,6 +3,7 @@ import { Table } from "../component/table.js";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 export class Home extends React.Component {
 	constructor() {
@@ -25,9 +26,7 @@ export class Home extends React.Component {
 								<div className="m-auto text-center" id="search">
 									<span>Search Bar</span>
 								</div>
-
 								<br />
-
 								<div className="text-center">
 									<i className="fas fa-caret-square-left" onClick={() => actions.changeDay()}>
 										{" "}
@@ -40,7 +39,6 @@ export class Home extends React.Component {
 									<i className="fas fa-caret-square-right" />
 								</div>
 								<br />
-
 								<div>
 									<Table onDelete={() => this.setState({ showModal: true })} />
 									<ModalPlan
@@ -48,17 +46,21 @@ export class Home extends React.Component {
 										onClose={() => this.setState({ showModal: false })}
 									/>
 								</div>
-
 								<i className="fas fa-plus" id="plus">
 									<span className="font-weight-bold">Add Another Food Item</span>
 								</i>
-
-								<div id="totalCal" className="text-white p-2 d-inline-block text-center">
+								<button type="button" className="btn btn-primary" id="totalCal">
 									Total Calories
-								</div>
+									<span className="badge badge-light">4</span>
+								</button>
 								<div id="total2" className="text-white d-inline-block p-2 text-center">
 									Total Burned Calories
 								</div>
+								<ProgressBar>
+									<ProgressBar className="mw-100" striped variant="danger" now={1000} key={1} />
+									<ProgressBar className="mw-100" variant="success" now={250} key={2} />
+								</ProgressBar>
+								;
 							</div>
 						);
 					}}
