@@ -1,5 +1,8 @@
 import React from "react";
 import "../../styles/table.scss";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export class Table extends React.Component {
 	render() {
@@ -15,7 +18,7 @@ export class Table extends React.Component {
 								Calories
 							</th>
 							<th scope="col" className="text-center">
-								WorkOut
+								Workout
 							</th>
 							<th scope="col" className="text-center">
 								Calories Burned
@@ -27,12 +30,20 @@ export class Table extends React.Component {
 						<tr>
 							<th scope="row" />
 							<th scope="row" />
+							<th scope="row">
+								<Button variant="link" onClick={() => this.props.onDelete()}>
+									View Workout
+								</Button>
+							</th>
 							<th scope="row" />
-							<th scope="row" />
-						</tr>
+						</tr>{" "}
 					</tbody>
 				</table>
 			</div>
 		);
 	}
 }
+
+Table.propTypes = {
+	onDelete: PropTypes.func
+};

@@ -2,8 +2,16 @@ import React from "react";
 import { Table } from "../component/table.js";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
+import { ModalPlan } from "../component/modalplan";
 
 export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			showModal: false
+		};
+	}
+
 	render() {
 		return (
 			<div className="container">
@@ -34,7 +42,11 @@ export class Home extends React.Component {
 								<br />
 
 								<div>
-									<Table />
+									<Table onDelete={() => this.setState({ showModal: true })} />
+									<ModalPlan
+										show={this.state.showModal}
+										onClose={() => this.setState({ showModal: false })}
+									/>
 								</div>
 
 								<i className="fas fa-plus" id="plus">
