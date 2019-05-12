@@ -9,6 +9,7 @@ h1{
     background-size:cover;
     background-repeat:no-repeat;
     background-image:url("https://images.alphacoders.com/519/thumb-1920-519509.jpg");
+    overflow:scroll;
 }
 
 #totalCal {
@@ -28,12 +29,12 @@ h1{
 
 #total2 {
 
-    width:190px;
+    width:150px;
     height:50px;
-    background-color:green;
+    background-color:red;
     border-style:outset;
     border-color: gray;
-    transform:translate(470px,-5px);
+
     text-decoration: underline;
     font-weight: 700;
 
@@ -82,3 +83,14 @@ color:black;
 height:50px;
 
 }
+
+// #ove{
+
+//   height: 300px;
+//   width: auto;
+//   overflow-y: scroll;
+
+// }
+
+
+

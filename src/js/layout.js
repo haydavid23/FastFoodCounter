@@ -29,6 +29,11 @@ export class Layout extends React.Component {
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
 						<Navbar onDelete={() => this.setState({ showModal: true })} />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
 						<Modal show={this.state.showModal} onClose={() => this.setState({ showModal: false })} />
 						<Switch>
 							<Route exact path="/" component={Home} />

@@ -8,13 +8,17 @@ export class Navbar extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<nav className="navbar navbar-dark bg-dark mb-5 p-2">
-					<div className="container">
+				<nav className="navbar fixed-top navbar-dark bg-dark mb-5 p-2">
+					<div className="container-fluid">
 						<Link to="/">
 							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
 							<span className="navbar-brand mb-0 h1" id="navb">
 								Fast Food Counter
 							</span>
+							<div id="total2" className="text-white d-inline-block p-2 text-center">
+								Total Calories
+								<span className="badge badge-light">4</span>
+							</div>
 						</Link>
 						<span className="text-light">Welcome, User!</span>
 

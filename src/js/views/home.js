@@ -39,8 +39,10 @@ export class Home extends React.Component {
 									<i className="fas fa-caret-square-right" />
 								</div>
 								<br />
-								<div>
+								<div id="ove">
 									<Table onDelete={() => this.setState({ showModal: true })} />
+									<Table onDelete={() => this.setState({ showModal: true })} />
+
 									<ModalPlan
 										show={this.state.showModal}
 										onClose={() => this.setState({ showModal: false })}
@@ -49,13 +51,13 @@ export class Home extends React.Component {
 								<i className="fas fa-plus" id="plus">
 									<span className="font-weight-bold">Add Another Food Item</span>
 								</i>
-								<button type="button" className="btn btn-primary" id="totalCal">
-									Total Calories
-									<span className="badge badge-light">4</span>
-								</button>
 								<div id="total2" className="text-white d-inline-block p-2 text-center">
 									Total Burned Calories
 								</div>
+								<br />
+								<br />
+								<br />
+								<br />
 								<ProgressBar id="bar">
 									<ProgressBar
 										className="mw-100"

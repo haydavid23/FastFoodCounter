@@ -22,7 +22,7 @@ export class ModalPlan extends React.Component {
 							<div className="modal-dialog" role="document">
 								<div className="modal-content">
 									<div className="modal-header">
-										<h5 className="modal-title">Are you sure?</h5>
+										<h5 className="modal-title">Workout</h5>
 										{this.props.onClose ? (
 											<button
 												onClick={() => this.props.onClose()}
@@ -37,17 +37,17 @@ export class ModalPlan extends React.Component {
 										)}
 									</div>
 									<div className="modal-body">
-										<p>WORKOUTS</p>
+										<p>100 sit-ups under 3 min</p>
 									</div>
 									<div className="modal-footer">
 										<button
 											type="button"
-											className="btn btn-primary"
+											className="btn btn-danger"
 											onClick={() => this.props.onClose()}>
-											Oh no!
+											NOT YET!
 										</button>
-										<button type="button" className="btn btn-secondary" data-dismiss="modal">
-											Do it!
+										<button type="button" className="btn btn-success" data-dismiss="modal">
+											DONE!
 										</button>
 									</div>
 								</div>
