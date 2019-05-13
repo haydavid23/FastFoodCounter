@@ -15,10 +15,10 @@
 
 #totalCal {
     width:180px;
-    height:50px;
-    background-color:red;
+    height:60px;
+  
     border-style:outset;
-    border-color: gray;
+    border-color:white;
     transform:translate(105px, -5px);
     text-decoration: underline;
     font-weight: 700;
@@ -26,13 +26,18 @@
 }
 
 #totalCal2 {
-    width:180px;
+    width:200px;
     height:60px;
-    background-color:green;
+  
     border-style:outset;
-    border-color: gray;
+    border-color:white;
 
     text-decoration: underline;
     font-weight: 700;
 
+}
+
+#x{
+
+    color:white;
 }

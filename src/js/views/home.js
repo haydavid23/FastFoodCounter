@@ -42,7 +42,7 @@ export class Home extends React.Component {
 								<br />
 								<div id="ove">
 									<Table onDelete={() => this.setState({ showModal: true })} />
-
+									<Table onDelete={() => this.setState({ showModal: true })} />
 									<ModalPlan
 										show={this.state.showModal}
 										onClose={() => this.setState({ showModal: false })}

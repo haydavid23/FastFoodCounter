@@ -19,6 +19,7 @@ export class Navbar extends React.Component {
 						<div>
 							<div id="totalCal" className="text-white d-inline-block p-2 text-center">
 								Total Calories
+								<br />
 								<span className="badge badge-light">1000</span>
 							</div>
 						</div>

@@ -7,21 +7,22 @@ import PropTypes from "prop-types";
 export class Table extends React.Component {
 	render() {
 		return (
-			<div className="container">
-				<table className="table table-bordered table-dark mt-auto" id="table">
+			<div className="container d-inline">
+				<i id="x" className="fas fa-times fa-3x float-right" />
+				<table className="table table-bordered table-dark mt-auto w-100" id="table">
 					<thead>
 						<tr>
 							<th scope="col" className="text-center">
 								Food Item
 							</th>
-							<th scope="col" className="text-center">
+							<th scope="col" className="text-center ">
 								Calories
 							</th>
-							<th scope="col" className="text-center">
+							<th scope="col" className="text-center w-25">
 								Workout
 							</th>
-							<th scope="col" className="text-center">
-								Calories Burned
+							<th scope="col" className="text-center w-25">
+								Calories burned
 							</th>
 						</tr>
 					</thead>
@@ -29,7 +30,10 @@ export class Table extends React.Component {
 					<tbody>
 						<tr>
 							<th scope="row" />
-							<th scope="row"> 400 </th>
+							<th scope="row" className="text-center">
+								{" "}
+								400{" "}
+							</th>
 							<th scope="row">
 								<Button variant="link" onClick={() => this.props.onDelete()}>
 									View Workout
@@ -39,9 +43,6 @@ export class Table extends React.Component {
 						</tr>{" "}
 					</tbody>
 				</table>
-				<div>
-					<i className="far fa-minus-square fa-3x float-right" />
-				</div>
 			</div>
 		);
 	}
