@@ -29,7 +29,7 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<div className="text-center">
-									<i className="fas fa-caret-square-left" onClick={() => actions.changeDay()}>
+									<i className="fas fa-caret-square-left arrow" onClick={() => actions.changeDay()}>
 										{" "}
 									</i>{" "}
 									<span className="font-weight-bold">
@@ -37,7 +37,7 @@ export class Home extends React.Component {
 										{store.months[store.day.getMonth()]} {store.day.getDate()},{" "}
 										{store.day.getFullYear()}{" "}
 									</span>
-									<i className="fas fa-caret-square-right" />
+									<i className="fas fa-caret-square-right arrow " />
 								</div>
 								<br />
 								<div id="ove">
@@ -58,19 +58,12 @@ export class Home extends React.Component {
 								<ProgressBar id="bar">
 									<ProgressBar
 										className="mw-100"
-										striped
 										variant="danger"
 										now={1000}
 										key={1}
 										label={"Total Calories Intake"}
 									/>
-									<ProgressBar
-										striped
-										variant="warning"
-										now={700}
-										key={2}
-										label={"Left Over Calories"}
-									/>
+									<ProgressBar variant="warning" now={700} key={2} label={"Left Over Calories"} />
 									<ProgressBar
 										className="mw-100"
 										variant="success"

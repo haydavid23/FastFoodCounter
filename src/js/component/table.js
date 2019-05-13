@@ -8,7 +8,7 @@ export class Table extends React.Component {
 	render() {
 		return (
 			<div className="container d-inline">
-				<i id="x" className="fas fa-times fa-3x float-right" />
+				<i id="x" className="fas fa-times fa-2x float-right" />
 				<table className="table table-bordered table-dark mt-auto w-100" id="table">
 					<thead>
 						<tr>
