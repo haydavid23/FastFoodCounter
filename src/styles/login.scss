@@ -1,0 +1,65 @@
+h1{
+
+    color:black;
+}
+
+
+#back{
+     background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-image:url("https://images.alphacoders.com/519/thumb-1920-519509.jpg");
+    overflow:scroll;
+}
+
+
+
+
+
+#plus {
+    transform:translate(15px, -20px)
+
+}
+
+
+#search {
+    width:500px;
+    height:45px;
+    background-color:gray;
+    border-color: black;
+    border-style:solid;
+
+
+}
+
+#user {
+    color:white;
+
+}
+
+#main {
+
+    background-color:yellow;
+}
+
+
+#arrow{
+
+color:black;
+
+}
+
+#arrow2{
+color:black;
+}
+
+#bar{
+height:50px;
+
+}
+
+.arrow{
+
+    cursor:pointer;
+}
+

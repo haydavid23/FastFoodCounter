@@ -1,44 +1,82 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Table } from "../component/table.js";
+import "../../styles/login.scss";
+import { Context } from "../store/appContext.js";
+import { ModalPlan } from "../component/modalplan";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import Button from "react-bootstrap/Button";
 
-import { Context } from "../store/appContext";
+export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			showModal: false
+		};
+	}
 
-import "../../styles/demo.scss";
-
-export class Demo extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<ul className="list-group">
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return store.demo.map((item, index) => {
-								return (
-									<li
-										key={index}
-										className="list-group-item d-flex justify-content-between"
-										style={{ background: item.background }}>
-										<Link to={"/single/" + index}>
-											<span>Link to: {item.title}</span>
-										</Link>
-										<p style={{ color: item.initial }}>
-											{"Check store/store.js scroll to the actions to see the code "}
-										</p>
-										<button
-											className="btn btn-success"
-											onClick={() => actions.changeColor(index, "orange")}>
-											Change Color
-										</button>
-									</li>
-								);
-							});
-						}}
-					</Context.Consumer>
-				</ul>
-				<br />
-				<Link to="/">
-					<button className="btn btn-primary">Back home</button>
-				</Link>
+				<Context.Consumer>
+					{({ store, actions }) => {
+						return (
+							<div>
+								<h1 className="text-center">
+									<strong>Time to Burn Some Calories!</strong>
+								</h1>
+								<div className="m-auto text-center" id="search">
+									<span>Search Bar</span>
+								</div>
+								<br />
+								<div className="text-center">
+									<i className="fas fa-caret-square-left arrow" onClick={() => actions.changeDay()}>
+										{" "}
+									</i>{" "}
+									<span className="font-weight-bold">
+										{" "}
+										{store.months[store.day.getMonth()]} {store.day.getDate()},{" "}
+										{store.day.getFullYear()}{" "}
+									</span>
+									<i className="fas fa-caret-square-right arrow " />
+								</div>
+								<br />
+								<div id="ove">
+									<Table onDelete={() => this.setState({ showModal: true })} />
+									<Table onDelete={() => this.setState({ showModal: true })} />
+									<ModalPlan
+										show={this.state.showModal}
+										onClose={() => this.setState({ showModal: false })}
+									/>
+								</div>
+								<i className="fas fa-plus" id="plus">
+									<span className="font-weight-bold">Add Another Food Ite</span>
+								</i>
+								<br />
+								<br />
+								<br />
+								<br />
+								<ProgressBar id="bar">
+									<ProgressBar
+										className="mw-100"
+										variant="danger"
+										now={1000}
+										key={1}
+										label={"Total Calories Intake"}
+									/>
+									<ProgressBar variant="warning" now={700} key={2} label={"Left Over Calories"} />
+									<ProgressBar
+										className="mw-100"
+										variant="success"
+										now={300}
+										key={3}
+										label={"Total Calories Burned"}
+									/>
+								</ProgressBar>
+								;
+							</div>
+						);
+					}}
+				</Context.Consumer>
 			</div>
 		);
 	}

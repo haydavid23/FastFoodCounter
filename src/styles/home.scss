@@ -1,65 +1,13 @@
-h1{
-
-    color:black;
+.jumbotron{
+    width: 40%;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
 }
-
-
-#back{
-     background-attachment: fixed;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-image:url("https://images.alphacoders.com/519/thumb-1920-519509.jpg");
-    overflow:scroll;
+#button2{
+    margin-top: 80px;
 }
-
-
-
-
-
-#plus {
-    transform:translate(15px, -20px)
-
+table{
+    margin-top: 50px;
 }
-
-
-#search {
-    width:500px;
-    height:45px;
-    background-color:gray;
-    border-color: black;
-    border-style:solid;
-
-
-}
-
-#user {
-    color:white;
-
-}
-
-#main {
-
-    background-color:yellow;
-}
-
-
-#arrow{
-
-color:black;
-
-}
-
-#arrow2{
-color:black;
-}
-
-#bar{
-height:50px;
-
-}
-
-.arrow{
-
-    cursor:pointer;
-}
-
