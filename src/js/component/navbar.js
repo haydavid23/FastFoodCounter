@@ -10,7 +10,7 @@ export class Navbar extends React.Component {
 			<div className="container-fluid">
 				<nav className="navbar fixed-top navbar-dark bg-dark mb-5 p-2">
 					<div className="container-fluid">
-						<Link to="/">
+						<Link to="/demo">
 							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
 							<span className="navbar-brand mb-0 h1" id="navb">
 								Fast Food Counter

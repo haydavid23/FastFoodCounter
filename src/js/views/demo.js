@@ -6,7 +6,7 @@ import { ModalPlan } from "../component/modalplan";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 
-export class Home extends React.Component {
+export class Demo extends React.Component {
 	constructor() {
 		super();
 		this.state = {
