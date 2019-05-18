@@ -5,6 +5,7 @@ import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
+import { Navbar } from "../component/navbar.js";
 
 export class Demo extends React.Component {
 	constructor() {
@@ -21,6 +22,7 @@ export class Demo extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div>
+								<Navbar onDelete={() => this.setState({ showModal: true })} />
 								<h1 className="text-center">
 									<strong>Time to Burn Some Calories!</strong>
 								</h1>

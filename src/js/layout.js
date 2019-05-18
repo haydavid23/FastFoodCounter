@@ -28,7 +28,6 @@ export class Layout extends React.Component {
 			<div className="d-flex flex-column h-100" id="back">
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
-						<Navbar onDelete={() => this.setState({ showModal: true })} />
 						<br />
 						<br />
 						<br />
