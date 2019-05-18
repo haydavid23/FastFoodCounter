@@ -7,6 +7,7 @@ import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
+import { Tablemain } from "../component/tablemain.js";
 
 export class Home extends React.Component {
 	constructor() {
@@ -71,24 +72,11 @@ export class Home extends React.Component {
 									</div>
 								</div>
 								<div className="container">
-									<table className="table table-bordered">
-										<thead>
-											<tr>
-												<th scope="col">Food Item</th>
-												<th scope="col">Calories</th>
-												<th scope="col">Counter</th>
-												<th scope="col">Calories Burned</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">Big Mac</th>
-												<td>500</td>
-												<td>200 sit ups/4 minutes</td>
-												<td>300</td>
-											</tr>
-										</tbody>
-									</table>
+									<Tablemain onDelete={() => this.setState({ showModal: true })} />
+									<ModalPlan
+										show={this.state.showModal}
+										onClose={() => this.setState({ showModal: false })}
+									/>
 								</div>
 								<div className="jumbotron bg-danger p-3">
 									<p className="display-8 text-white text-center">
