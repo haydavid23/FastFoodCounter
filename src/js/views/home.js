@@ -8,6 +8,7 @@ import { ModalPlan } from "../component/modalplan";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
+import { Newnav } from "../component/newnav.js";
 
 export class Home extends React.Component {
 	constructor() {
@@ -24,6 +25,7 @@ export class Home extends React.Component {
 						return (
 							<div>
 								<Navbarmain onDelete={() => this.setState({ showModal: true })} />
+
 								<Carousel>
 									<Carousel.Item>
 										<img
