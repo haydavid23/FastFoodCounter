@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
 import PropTypes from "prop-types";
+import Carousel from "react-bootstrap/Carousel";
 
 export class Home extends React.Component {
 	constructor() {
@@ -22,62 +23,40 @@ export class Home extends React.Component {
 						return (
 							<div>
 								<Navbarmain onDelete={() => this.setState({ showModal: true })} />
-								<div className="card-group">
-									<div className="card">
+								<Carousel>
+									<Carousel.Item>
 										<img
-											src="https://www.freetrainers.com/image/kJkyN6UGohmSJirg7JjLdmoWpplW5mvkZjBGYaN_YvQ-ftd-lxiRpZkqR1uqd1ku.jpg"
-											className="card-img-top"
-											alt="..."
+											className="d-block w-90"
+											src="http://fitbydesigncoppell.com/wp-content/uploads/2014/05/burpee_fries_post.jpg"
+											alt="First slide"
 										/>
-										<div className="card-body">
-											<h5 className="card-title">Customized workout plan</h5>
-											<p className="card-text">
-												This is a wider card with supporting text below as a natural lead-in to
-												additional content. This content is a little bit longer.
-											</p>
-											<p className="card-text">
-												<small className="text-muted">Last updated 3 mins ago</small>
-											</p>
-										</div>
-									</div>
-									<div className="card">
+										<Carousel.Caption>
+											<h3>Customized workouts to counter your fast food meals</h3>
+										</Carousel.Caption>
+									</Carousel.Item>
+									<Carousel.Item>
 										<img
-											src="https://media.gettyimages.com/photos/mcdonalds-picture-id157728622?s=612x612"
-											className="card-img-top"
-											alt="..."
+											className="d-block w-90"
+											src="https://i.pinimg.com/originals/5d/77/ad/5d77adca05eb2ad971f559b2fafd2fea.jpg"
+											alt="Third slide"
 										/>
-										<div className="card-body">
-											<h5 className="card-title">
-												The major fast food chains and their calories
-											</h5>
-											<p className="card-text">
-												This card has supporting text below as a natural lead-in to additional
-												content.
-											</p>
-											<p className="card-text">
-												<small className="text-muted">Last updated 3 mins ago</small>
-											</p>
-										</div>
-									</div>
-									<div className="card">
+
+										<Carousel.Caption>
+											<h3>All the major fast food chains include</h3>
+										</Carousel.Caption>
+									</Carousel.Item>
+									<Carousel.Item>
 										<img
-											src="https://i2-prod.mirror.co.uk/incoming/article11853635.ece/ALTERNATES/s615/MAIN-calorie.jpg"
-											className="card-img-top"
-											alt="..."
+											className="d-block w-90"
+											src="https://www.unilad.co.uk/wp-content/uploads/2016/03/Screen-Shot-2016-03-04-at-17.26.35.png"
+											alt="Third slide"
 										/>
-										<div className="card-body">
-											<h5 className="card-title">How to counter your fast food calories</h5>
-											<p className="card-text">
-												This is a wider card with supporting text below as a natural lead-in to
-												additional content. This card has even longer content than the first to
-												show that equal height action.
-											</p>
-											<p className="card-text">
-												<small className="text-muted">Last updated 3 mins ago</small>
-											</p>
-										</div>
-									</div>
-								</div>
+
+										<Carousel.Caption>
+											<h3>Keep track of your fast food calorie intake</h3>
+										</Carousel.Caption>
+									</Carousel.Item>
+								</Carousel>
 
 								<div className="jumbotron bg-danger p-3">
 									<h1 className="display-4 bg-danger text-white text-center text-weight-bold">
