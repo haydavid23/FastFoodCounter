@@ -14,8 +14,14 @@ export class Newnav extends React.Component {
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="mr-auto">
-							<Nav.Link href="#features">Features</Nav.Link>
-							<Nav.Link href="#pricing">Pricing</Nav.Link>
+							<div id="totalCal2" className="text-white d-inline-block p-2 text-center">
+								Total Burned Calories
+								<span className="badge badge-light">1000</span>
+							</div>
+							<div id="totalCal" className="text-white d-inline-block p-2 text-center">
+								Total Calories
+								<br /> <span className="badge badge-light">1000</span>
+							</div>
 						</Nav>
 						<Nav>
 							<Nav.Link href="#deets">More deets</Nav.Link>

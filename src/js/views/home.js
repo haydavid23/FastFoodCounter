@@ -25,7 +25,7 @@ export class Home extends React.Component {
 						return (
 							<div>
 								<Navbarmain onDelete={() => this.setState({ showModal: true })} />
-
+								<Newnav />
 								<Carousel>
 									<Carousel.Item>
 										<img
