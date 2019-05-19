@@ -17,15 +17,17 @@ export class Example extends React.Component {
 		return (
 			<>
 				<Button
+					className="w-100"
 					onClick={() => this.setState({ open: !open })}
 					aria-controls="example-collapse-text"
 					aria-expanded={open}>
-					View Workout
+					Workout
 				</Button>
 				<Collapse in={this.state.open}>
 					<div id="example-collapse-text">
 						<ListGroup variant="flush">
 							<ListGroup.Item variant="dark">Cras justo odio</ListGroup.Item>
+
 							<ListGroup.Item variant="dark">Dapibus ac facilisis in</ListGroup.Item>
 							<ListGroup.Item variant="dark">Morbi leo risus</ListGroup.Item>
 							<ListGroup.Item variant="dark">Porta ac consectetur ac</ListGroup.Item>

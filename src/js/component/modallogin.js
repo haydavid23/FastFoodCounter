@@ -2,6 +2,9 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.js";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export class Modal extends React.Component {
 	constructor() {
@@ -22,7 +25,7 @@ export class Modal extends React.Component {
 							<div className="modal-dialog" role="document">
 								<div className="modal-content">
 									<div className="modal-header">
-										<h5 className="modal-title">Are you sure?</h5>
+										<h5 className="modal-title">Please Enter Username and Password</h5>
 										{this.props.onClose ? (
 											<button
 												onClick={() => this.props.onClose()}
@@ -37,17 +40,32 @@ export class Modal extends React.Component {
 										)}
 									</div>
 									<div className="modal-body">
-										<p>Warning: unknown consequences after this point... Kidding!</p>
+										<Form>
+											<Form.Group as={Row} controlId="formHorizontalEmail">
+												<Form.Label column sm={2}>
+													Email
+												</Form.Label>
+												<Col sm={10}>
+													<Form.Control type="email" placeholder="Email" />
+												</Col>
+											</Form.Group>
+
+											<Form.Group as={Row} controlId="formHorizontalPassword">
+												<Form.Label column sm={2}>
+													Password
+												</Form.Label>
+												<Col sm={10}>
+													<Form.Control type="password" placeholder="Password" />
+												</Col>
+											</Form.Group>
+										</Form>
 									</div>
 									<div className="modal-footer">
 										<button
 											type="button"
 											className="btn btn-primary"
 											onClick={() => this.props.onClose()}>
-											Oh no!
-										</button>
-										<button type="button" className="btn btn-secondary" data-dismiss="modal">
-											Do it!
+											Login
 										</button>
 									</div>
 								</div>

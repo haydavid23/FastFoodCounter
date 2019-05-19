@@ -10,8 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import "../styles/home.scss";
-import { Modal } from "./component/modal";
-
+import { Modal } from "./component/modallogin";
 //create your first component
 export class Layout extends React.Component {
 	constructor() {

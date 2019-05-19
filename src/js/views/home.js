@@ -4,7 +4,7 @@ import "../../styles/home.scss";
 import { Navbarmain } from "../component/navbarmain.js";
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
-import { ModalPlan } from "../component/modalplan";
+import { Modal } from "../component/modallogin";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
@@ -25,7 +25,11 @@ export class Home extends React.Component {
 						return (
 							<div>
 								<Navbarmain onDelete={() => this.setState({ showModal: true })} />
-								<Newnav />
+								<Newnav onDelete={() => this.setState({ showModal: true })} />
+								<Modal
+									show={this.state.showModal}
+									onClose={() => this.setState({ showModal: false })}
+								/>
 								<Carousel>
 									<Carousel.Item>
 										<img
@@ -74,11 +78,7 @@ export class Home extends React.Component {
 									</div>
 								</div>
 								<div className="container">
-									<Tablemain onDelete={() => this.setState({ showModal: true })} />
-									<ModalPlan
-										show={this.state.showModal}
-										onClose={() => this.setState({ showModal: false })}
-									/>
+									<Tablemain />
 								</div>
 								<div className="jumbotron bg-danger p-3">
 									<p className="display-8 text-white text-center">

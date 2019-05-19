@@ -4,6 +4,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Badge from "react-bootstrap/Badge";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import Button from "react-bootstrap/Button";
+import PropTypes from "prop-types";
 
 export class Newnav extends React.Component {
 	render() {
@@ -13,16 +16,19 @@ export class Newnav extends React.Component {
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
 					<Navbar.Brand href="#home">Fast Food Counter</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-					<Navbar.Collapse id="responsive-navbar-nav">
-						<Nav className="mr-auto">
-							<Badge variant="danger">Total Calories Consumed: 1000 </Badge>
-							<span> Welcome, User!</span>
-							<Badge variant="success">Total Calories Burned: 1000</Badge>
-						</Nav>
-					</Navbar.Collapse>
+					<Navbar.Collapse id="responsive-navbar-nav" />
+					<ButtonToolbar>
+						<Button variant="primary" onClick={() => this.props.onDelete()}>
+							Login
+						</Button>
+					</ButtonToolbar>
 				</Navbar>
 				;
 			</div>
 		);
 	}
 }
+
+Newnav.propTypes = {
+	onDelete: PropTypes.func
+};
