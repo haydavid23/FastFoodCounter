@@ -27,11 +27,6 @@ export class Layout extends React.Component {
 			<div className="d-flex flex-column h-100" id="back">
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
 						<Modal show={this.state.showModal} onClose={() => this.setState({ showModal: false })} />
 						<Switch>
 							<Route exact path="/" component={Home} />

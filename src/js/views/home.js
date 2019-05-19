@@ -24,7 +24,6 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div>
-								<Navbarmain onDelete={() => this.setState({ showModal: true })} />
 								<Newnav onDelete={() => this.setState({ showModal: true })} />
 								<Modal
 									show={this.state.showModal}

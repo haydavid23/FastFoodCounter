@@ -12,11 +12,14 @@ export class Newnav extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+				<Navbar collapseOnSelect bg="dark" variant="dark">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
-					<Navbar.Brand href="#home">Fast Food Counter</Navbar.Brand>
+					<Navbar.Brand href="#home" className="pl-2">
+						Fast Food Counter
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav" />
+
 					<ButtonToolbar>
 						<Button variant="primary" onClick={() => this.props.onDelete()}>
 							Login
