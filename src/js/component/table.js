@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
+import ListGroup from "react-bootstrap/ListGroup";
+import { Example } from "../component/expand.js";
 
 export class Table extends React.Component {
 	render() {
@@ -37,9 +39,7 @@ export class Table extends React.Component {
 								400{" "}
 							</th>
 							<th scope="row">
-								<Button variant="link" onClick={() => this.props.onDelete()}>
-									View Workout
-								</Button>
+								<Example />
 							</th>
 							<th scope="row" />
 						</tr>{" "}
