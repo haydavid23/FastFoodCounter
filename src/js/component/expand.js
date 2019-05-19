@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export class Example extends React.Component {
 	constructor(props, context) {
@@ -23,9 +24,12 @@ export class Example extends React.Component {
 				</Button>
 				<Collapse in={this.state.open}>
 					<div id="example-collapse-text">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-						Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-						proident.
+						<ListGroup variant="flush">
+							<ListGroup.Item variant="dark">Cras justo odio</ListGroup.Item>
+							<ListGroup.Item variant="dark">Dapibus ac facilisis in</ListGroup.Item>
+							<ListGroup.Item variant="dark">Morbi leo risus</ListGroup.Item>
+							<ListGroup.Item variant="dark">Porta ac consectetur ac</ListGroup.Item>
+						</ListGroup>
 					</div>
 				</Collapse>
 			</>
