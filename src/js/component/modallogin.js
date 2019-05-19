@@ -5,6 +5,7 @@ import { Context } from "../store/appContext.js";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
 export class Modal extends React.Component {
 	constructor() {
@@ -23,9 +24,9 @@ export class Modal extends React.Component {
 							role="dialog"
 							style={{ display: this.props.show ? "inline-block" : "none" }}>
 							<div className="modal-dialog" role="document">
-								<div className="modal-content">
+								<div className="modal-content bg-secondary">
 									<div className="modal-header">
-										<h5 className="modal-title">Please Enter Username and Password</h5>
+										<h5 className="modal-title text-center">Please Enter Username and Password</h5>
 										{this.props.onClose ? (
 											<button
 												onClick={() => this.props.onClose()}
@@ -40,6 +41,12 @@ export class Modal extends React.Component {
 										)}
 									</div>
 									<div className="modal-body">
+										<div>
+											<img
+												className="d-block mx-auto pb-2"
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg"
+											/>
+										</div>
 										<Form>
 											<Form.Group as={Row} controlId="formHorizontalEmail">
 												<Form.Label column sm={2}>
@@ -58,15 +65,20 @@ export class Modal extends React.Component {
 													<Form.Control type="password" placeholder="Password" />
 												</Col>
 											</Form.Group>
+											<div>
+												<button
+													type="button"
+													className="btn btn-primary w-100"
+													onClick={() => this.props.onClose()}>
+													Login
+												</button>
+											</div>
 										</Form>
 									</div>
 									<div className="modal-footer">
-										<button
-											type="button"
-											className="btn btn-primary"
-											onClick={() => this.props.onClose()}>
-											Login
-										</button>
+										<div className="d-inline-block text-left">
+											<Link to="#">Create an Account</Link>
+										</div>
 									</div>
 								</div>
 							</div>
