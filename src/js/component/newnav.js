@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Badge from "react-bootstrap/Badge";
 
 export class Newnav extends React.Component {
 	render() {
@@ -14,20 +15,9 @@ export class Newnav extends React.Component {
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="mr-auto">
-							<div id="totalCal2" className="text-white d-inline-block p-2 text-center">
-								Total Burned Calories
-								<span className="badge badge-light">1000</span>
-							</div>
-							<div id="totalCal" className="text-white d-inline-block p-2 text-center">
-								Total Calories
-								<br /> <span className="badge badge-light">1000</span>
-							</div>
-						</Nav>
-						<Nav>
-							<Nav.Link href="#deets">More deets</Nav.Link>
-							<Nav.Link eventKey={2} href="#memes">
-								Dank memes
-							</Nav.Link>
+							<Badge variant="danger">Total Calories Consumed: 1000 </Badge>
+							<span> Welcome, User!</span>
+							<Badge variant="success">Total Calories Burned: 1000</Badge>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

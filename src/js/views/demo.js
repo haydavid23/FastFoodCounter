@@ -6,6 +6,8 @@ import { ModalPlan } from "../component/modalplan";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import { Navbar } from "../component/navbar.js";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 
 export class Demo extends React.Component {
 	constructor() {
@@ -26,8 +28,12 @@ export class Demo extends React.Component {
 								<h1 className="text-center">
 									<strong>Time to Burn Some Calories!</strong>
 								</h1>
-								<div className="m-auto text-center" id="search">
-									<span>Search Bar</span>
+								<div>
+									<Form inline className="justify-content-center">
+										<FormControl type="text" placeholder="Search" className=" mr-sm-2 w-50 bar" />
+
+										<Button type="submit">Add Food Item</Button>
+									</Form>
 								</div>
 								<br />
 								<div className="text-center">

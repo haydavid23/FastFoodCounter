@@ -3,6 +3,8 @@ import "../../styles/table.scss";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 
 export class Table extends React.Component {
 	render() {
