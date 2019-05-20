@@ -8,23 +8,31 @@ import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 
-export class Newnav extends React.Component {
+export class Usernav extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar collapseOnSelect bg="dark" variant="dark">
+				<Navbar collapseOnSelect bg="dark" variant="dark" className="fixed-top">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
 					<Navbar.Brand href="#home" className="pl-2">
 						Fast Food Counter
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav" />
+					<Dropdown>
+						<Dropdown.Toggle variant="info" id="dropdown-basic">
+							Profile
+						</Dropdown.Toggle>
 
-					<ButtonToolbar>
-						<Button variant="primary" onClick={() => this.props.onDelete()}>
-							Login
-						</Button>
-					</ButtonToolbar>
+						<Dropdown.Menu>
+							<Dropdown.Item href="#/action-1">Monthly View</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
+							<Dropdown.Divider />
+							<Dropdown.Item href="#/action-2" onClick={() => this.props.onDelete()}>
+								Sign Out
+							</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
 				</Navbar>
 				;
 			</div>
@@ -32,6 +40,6 @@ export class Newnav extends React.Component {
 	}
 }
 
-Newnav.propTypes = {
+Usernav.propTypes = {
 	onDelete: PropTypes.func
 };

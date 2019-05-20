@@ -1,14 +1,14 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import { Navbarmain } from "../component/navbarmain.js";
+
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
 import { Modal } from "../component/modallogin";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
-import { Newnav } from "../component/newnav.js";
+import { Mainnav } from "../component/mainnav.js";
 
 export class Home extends React.Component {
 	constructor() {
@@ -24,7 +24,11 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div>
-								<Newnav onDelete={() => this.setState({ showModal: true })} />
+								<Mainnav onDelete={() => this.setState({ showModal: true })} />
+								<br />
+								<br />
+								<br />
+								<br />
 								<Modal
 									show={this.state.showModal}
 									onClose={() => this.setState({ showModal: false })}
@@ -93,7 +97,3 @@ export class Home extends React.Component {
 		);
 	}
 }
-
-Navbarmain.propTypes = {
-	onDelete: PropTypes.func
-};

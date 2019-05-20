@@ -7,7 +7,6 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import "../styles/home.scss";
 import { Modal } from "./component/modallogin";

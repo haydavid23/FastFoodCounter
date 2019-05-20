@@ -1,11 +1,11 @@
 import React from "react";
-import { Table } from "../component/table.js";
+import { Table } from "../component/tableuser.js";
 import "../../styles/login.scss";
 import { Context } from "../store/appContext.js";
 import { ModalPlan } from "../component/modalplan";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
-import { Navbar } from "../component/navbar.js";
+import { Usernav } from "../component/usernav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 
@@ -24,7 +24,7 @@ export class Demo extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div>
-								<Navbar onDelete={() => this.setState({ showModal: true })} />
+								<Usernav onDelete={() => this.setState({ showModal: true })} />
 								<h1 className="text-center">
 									<strong>Time to Burn Some Calories!</strong>
 								</h1>
