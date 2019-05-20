@@ -66,12 +66,11 @@ export class Modal extends React.Component {
 												</Col>
 											</Form.Group>
 											<div>
-												<button
-													type="button"
-													className="btn btn-primary w-100"
-													onClick={() => this.props.onClose()}>
-													Login
-												</button>
+												<Link to="/demo">
+													<button type="button" className="btn btn-primary w-100">
+														Login
+													</button>
+												</Link>
 											</div>
 										</Form>
 									</div>
