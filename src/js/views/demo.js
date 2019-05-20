@@ -1,6 +1,6 @@
 import React from "react";
 import { Tableuser } from "../component/tableuser.js";
-import "../../styles/login.scss";
+import "../../styles/demo.scss";
 import { Context } from "../store/appContext.js";
 
 import ProgressBar from "react-bootstrap/ProgressBar";

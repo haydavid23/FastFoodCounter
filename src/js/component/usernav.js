@@ -7,12 +7,13 @@ import Badge from "react-bootstrap/Badge";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
+import "../../styles/usernav.scss";
 
 export class Usernav extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar collapseOnSelect bg="dark" variant="dark" className="fixed-top">
+				<Navbar collapseOnSelect bg="dark" variant="dark" className="fixed-top" id="user">
 					<Link to="/">
 						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
 					</Link>
@@ -31,7 +32,7 @@ export class Usernav extends React.Component {
 							<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
 							<Dropdown.Divider />
 							<Dropdown.Item href="#/action-2" onClick={() => this.props.onDelete()}>
-								Sign Out
+								<Link to="/"> Sign Out </Link>
 							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
