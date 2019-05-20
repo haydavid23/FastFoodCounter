@@ -3,6 +3,7 @@ import "../../styles/table.scss";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Workouts } from "../component/workouts.js";
 
 export class Tablemain extends React.Component {
 	render() {
@@ -34,9 +35,7 @@ export class Tablemain extends React.Component {
 								400{" "}
 							</th>
 							<th scope="row">
-								<Button variant="link" onClick={() => this.props.onDelete()}>
-									View Workout
-								</Button>
+								<Workouts />
 							</th>
 							<th scope="row" />
 						</tr>{" "}
