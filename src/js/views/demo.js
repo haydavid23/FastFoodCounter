@@ -1,8 +1,8 @@
 import React from "react";
-import { Table } from "../component/tableuser.js";
+import { Tableuser } from "../component/tableuser.js";
 import "../../styles/login.scss";
 import { Context } from "../store/appContext.js";
-import { ModalPlan } from "../component/modalplan";
+
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import { Usernav } from "../component/usernav.js";
@@ -25,6 +25,10 @@ export class Demo extends React.Component {
 						return (
 							<div>
 								<Usernav onDelete={() => this.setState({ showModal: true })} />
+								<br />
+								<br />
+								<br />
+								<br />
 								<h1 className="text-center">
 									<strong>Time to Burn Some Calories!</strong>
 								</h1>
@@ -49,12 +53,8 @@ export class Demo extends React.Component {
 								</div>
 								<br />
 								<div id="ove">
-									<Table onDelete={() => this.setState({ showModal: true })} />
-									<Table onDelete={() => this.setState({ showModal: true })} />
-									<ModalPlan
-										show={this.state.showModal}
-										onClose={() => this.setState({ showModal: false })}
-									/>
+									<Tableuser onDelete={() => this.setState({ showModal: true })} />
+									<Tableuser onDelete={() => this.setState({ showModal: true })} />
 								</div>
 								<i className="fas fa-plus" id="plus">
 									<span className="font-weight-bold">Add Another Food Ite</span>

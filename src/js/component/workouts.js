@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 
-export class Example extends React.Component {
+export class Workouts extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 

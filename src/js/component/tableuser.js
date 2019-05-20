@@ -6,9 +6,9 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Example } from "../component/expand.js";
+import { Workouts } from "../component/workouts.js";
 
-export class Table extends React.Component {
+export class Tableuser extends React.Component {
 	render() {
 		return (
 			<div className="container d-inline">
@@ -39,7 +39,7 @@ export class Table extends React.Component {
 								400{" "}
 							</th>
 							<th scope="row">
-								<Example />
+								<Workouts />
 							</th>
 							<th scope="row" />
 						</tr>{" "}
@@ -50,6 +50,6 @@ export class Table extends React.Component {
 	}
 }
 
-Table.propTypes = {
+Tableuser.propTypes = {
 	onDelete: PropTypes.func
 };
