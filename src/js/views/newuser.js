@@ -29,7 +29,8 @@ export class New extends React.Component {
 								<br />
 								<br />
 								<br />
-								<Form>
+								<h1 className="text-center">REGISTER NOW!</h1>
+								<Form className="bg-dark text-white w-50 mx-auto p-4">
 									<Form.Row>
 										<Form.Group as={Col} controlId="formGridEmail">
 											<Form.Label>Email</Form.Label>
@@ -72,9 +73,6 @@ export class New extends React.Component {
 										</Form.Group>
 									</Form.Row>
 
-									<Form.Group id="formGridCheckbox">
-										<Form.Check type="checkbox" label="Check me out" />
-									</Form.Group>
 									<Link to="/">
 										<Button variant="primary" type="submit">
 											Submit
