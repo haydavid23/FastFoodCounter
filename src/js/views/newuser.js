@@ -1,6 +1,6 @@
 import React from "react";
 import { Tableuser } from "../component/tableuser.js";
-import "../../styles/demo.scss";
+import "../../styles/newuser.scss";
 import { Context } from "../store/appContext.js";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
@@ -30,7 +30,17 @@ export class New extends React.Component {
 								<br />
 								<br />
 								<h1 className="text-center">REGISTER NOW!</h1>
-								<Form className="bg-dark text-white w-50 mx-auto p-4">
+								<Form className="bg-dark text-white w-50 mx-auto p-4" id="register">
+									<Form.Row>
+										<Form.Group as={Col} controlId="formGridEmail">
+											<Form.Label>Name</Form.Label>
+											<Form.Control type="text" placeholder="Enter Name" />
+										</Form.Group>
+										<Form.Group as={Col} controlId="formGridEmail">
+											<Form.Label>Last Name</Form.Label>
+											<Form.Control type="text" placeholder="Enter Last Name" />
+										</Form.Group>
+									</Form.Row>
 									<Form.Row>
 										<Form.Group as={Col} controlId="formGridEmail">
 											<Form.Label>Email</Form.Label>

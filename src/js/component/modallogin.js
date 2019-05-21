@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import "../../styles/modallog.scss";
 
 export class Modal extends React.Component {
 	constructor() {
@@ -24,7 +25,7 @@ export class Modal extends React.Component {
 							role="dialog"
 							style={{ display: this.props.show ? "inline-block" : "none" }}>
 							<div className="modal-dialog" role="document">
-								<div className="modal-content bg-secondary">
+								<div className="modal-content bg-secondary" id="log">
 									<div className="modal-header">
 										<h5 className="modal-title text-center">Please Enter Username and Password</h5>
 										{this.props.onClose ? (

@@ -8,6 +8,8 @@ import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
 import { Mainnav } from "../component/mainnav.js";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 
 export class Home extends React.Component {
 	constructor() {
@@ -72,13 +74,17 @@ export class Home extends React.Component {
 										TRY IT NOW!
 									</h1>
 								</div>
-								<div className="search">
-									<div className="container">
-										<button type="button" id="button2" className="btn btn-dark btn-lg btn-block">
-											Search Food Database
-										</button>
-									</div>
+								<br />
+								<br />
+
+								<div className="container">
+									<Form inline className="justify-content-center">
+										<FormControl type="text" placeholder="Search" className=" mr-sm-2 w-50 bar" />
+
+										<Button type="submit">Add Food Item</Button>
+									</Form>
 								</div>
+
 								<div className="container">
 									<Tablemain />
 								</div>

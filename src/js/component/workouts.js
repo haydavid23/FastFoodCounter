@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
+import Form from "react-bootstrap/Form";
 
 export class Workouts extends React.Component {
 	constructor(props, context) {
@@ -26,11 +27,15 @@ export class Workouts extends React.Component {
 				<Collapse in={this.state.open}>
 					<div id="example-collapse-text">
 						<ListGroup variant="flush">
-							<ListGroup.Item variant="dark">Cras justo odio</ListGroup.Item>
-
-							<ListGroup.Item variant="dark">Dapibus ac facilisis in</ListGroup.Item>
-							<ListGroup.Item variant="dark">Morbi leo risus</ListGroup.Item>
-							<ListGroup.Item variant="dark">Porta ac consectetur ac</ListGroup.Item>
+							<ListGroup.Item variant="dark">
+								Cras justo odio <Form.Check type="checkbox" className="d-inline" />
+							</ListGroup.Item>
+							<ListGroup.Item variant="dark">
+								Cras justo odio <Form.Check type="checkbox" className="d-inline" />
+							</ListGroup.Item>
+							<ListGroup.Item variant="dark">
+								Cras justo odio <Form.Check type="checkbox" className="d-inline" />
+							</ListGroup.Item>
 						</ListGroup>
 					</div>
 				</Collapse>
