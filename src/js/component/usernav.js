@@ -22,7 +22,7 @@ export class Usernav extends React.Component {
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav" />
-					<Dropdown>
+					<Dropdown alignRight title="Dropdown right" id="dropdown-menu-align-righ">
 						<Dropdown.Toggle variant="info" id="dropdown-basic">
 							Profile
 						</Dropdown.Toggle>

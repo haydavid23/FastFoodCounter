@@ -2,12 +2,12 @@ import React from "react";
 import { Tableuser } from "../component/tableuser.js";
 import "../../styles/demo.scss";
 import { Context } from "../store/appContext.js";
-
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import { Mainnav } from "../component/mainnav.js";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 export class New extends React.Component {
 	constructor() {
@@ -75,10 +75,11 @@ export class New extends React.Component {
 									<Form.Group id="formGridCheckbox">
 										<Form.Check type="checkbox" label="Check me out" />
 									</Form.Group>
-
-									<Button variant="primary" type="submit">
-										Submit
-									</Button>
+									<Link to="/">
+										<Button variant="primary" type="submit">
+											Submit
+										</Button>
+									</Link>
 								</Form>
 								;
 							</div>
