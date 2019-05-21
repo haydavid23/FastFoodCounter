@@ -29,3 +29,19 @@ table{
     overflow-x:hidden;
 
 }
+#jumbo2{
+    margin-bottom: 80px;
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: 50px;
+    color: black !important;
+    text-shadow:
+        -4px -4px 0 rgb(190, 59, 59),
+        4px -4px 0 rgb(190, 59, 59),
+        -4px 4px 0 rgb(190, 59, 59),
+        4px 4px 0 rgb(190, 59, 59);
+}

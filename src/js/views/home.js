@@ -34,6 +34,7 @@ export class Home extends React.Component {
 									show={this.state.showModal}
 									onClose={() => this.setState({ showModal: false })}
 								/>
+								<h1> FAST FOOD COUNTER </h1>
 								<Carousel>
 									<Carousel.Item>
 										<img
@@ -88,7 +89,7 @@ export class Home extends React.Component {
 								<div className="container">
 									<Tablemain />
 								</div>
-								<div className="jumbotron bg-danger p-3">
+								<div className="jumbotron bg-danger p-3" id="jumbo2">
 									<p className="display-8 text-white text-center">
 										Sign up today and get a personalized profile with alternative meals and
 										workouts!
