@@ -76,7 +76,7 @@ export class Modal extends React.Component {
 									</div>
 									<div className="modal-footer">
 										<div className="d-inline-block text-left">
-											<Link to="#" className="font-weight-bold text-white">
+											<Link to="/newuser" className="font-weight-bold text-white">
 												Create an Account
 											</Link>
 										</div>

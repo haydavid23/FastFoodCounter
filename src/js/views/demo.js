@@ -19,11 +19,11 @@ export class Demo extends React.Component {
 
 	render() {
 		return (
-			<div className="container">
+			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div>
+							<div className="container">
 								<Usernav onDelete={() => this.setState({ showModal: true })} />
 								<br />
 								<br />

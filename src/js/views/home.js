@@ -1,7 +1,6 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
 import { Modal } from "../component/modallogin";
@@ -23,7 +22,7 @@ export class Home extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div>
+							<div className="container">
 								<Mainnav onDelete={() => this.setState({ showModal: true })} />
 								<br />
 								<br />
