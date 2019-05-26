@@ -10,6 +10,7 @@ import { Tablemain } from "../component/tablemain.js";
 import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
+import { Typeahead } from "react-bootstrap-typeahead";
 
 export class Home extends React.Component {
 	constructor() {
@@ -78,12 +79,16 @@ export class Home extends React.Component {
 								<br />
 								<br />
 
-								<div className="container">
-									<Form inline className="justify-content-center">
-										<FormControl type="text" placeholder="Search" className=" mr-sm-2 w-50 bar" />
-
-										<Button type="submit">Add Food Item</Button>
-									</Form>
+								<div className="container d-inline">
+									<Typeahead
+										labelKey="name"
+										placeholder="Choose your Meal"
+										options={["asd", "david"]}
+										className="w-50 mx-auto bar"
+									/>
+									<Button type="submit" className="d-inline-block float-right">
+										Add Food Item
+									</Button>
 								</div>
 
 								<div className="container">
