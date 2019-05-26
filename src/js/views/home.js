@@ -85,6 +85,7 @@ export class Home extends React.Component {
 										placeholder="Choose your Meal"
 										options={["asd", "david"]}
 										className="w-50 mx-auto bar"
+										onClick={() => actions.searchBar()}
 									/>
 									<Button type="submit" className="d-inline-block float-right">
 										Add Food Item

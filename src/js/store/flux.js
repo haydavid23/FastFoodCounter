@@ -1,6 +1,7 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			food: [],
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -31,10 +32,24 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
-			changeDay: () => {
-				const store = getStore();
-				let demo = store.day.getDate() - 1;
-				setStore({ previousDay: demo });
+			searchBar: () => {
+				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=big mac", {
+					method: "GET",
+
+					headers: {
+						"x-app-id": "da0a3819",
+						"x-remote-user-id": "0",
+						"x-app-key": "2865a994886d0e258357d55037e33f3b"
+					}
+				})
+					.then(response => response.json())
+
+					.then(data => {
+						let { store } = this.state;
+						store.food = data;
+						this.setState({ store });
+						console.log(store.food);
+					});
 			},
 			changeColor: (index, color) => {
 				//get the store
