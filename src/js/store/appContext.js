@@ -21,12 +21,25 @@ const injectContext = PassedComponent => {
 			});
 		}
 
-		componentDidMount() {}
+		componentDidMount() {
+			fetch("https://trackapi.nutritionix.com/v2/search/instant", {
+				headers: {
+					"x-app-key": "2865a994886d0e258357d55037e33f3b",
+					"x-remote-user-id": "0",
+					"x-app-id": "da0a3819"
+				}
+			})
+				.then(response => response.json())
+
+				.then(data => {
+					let { store } = this.state;
+					store.food = data;
+					this.setState({ store });
+				});
+		}
 
 		render() {
-			// the initial value for the context its not null anymore, but the current state of this component,
-			// the context will have a getStore and setStore functions available then, because they were declared
-			// on the state of this component
+			console.log(this.state.store.food);
 			return (
 				<Context.Provider value={this.state}>
 					<PassedComponent {...this.props} />

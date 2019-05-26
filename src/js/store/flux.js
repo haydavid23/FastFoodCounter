@@ -1,3 +1,7 @@
+import PropTypes from "prop-types";
+import React from "react";
+import injectContext from "../store/appContext.js";
+
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -32,25 +36,7 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
-			searchBar: () => {
-				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=big mac", {
-					method: "GET",
-
-					headers: {
-						"x-app-id": "da0a3819",
-						"x-remote-user-id": "0",
-						"x-app-key": "2865a994886d0e258357d55037e33f3b"
-					}
-				})
-					.then(response => response.json())
-
-					.then(data => {
-						let { store } = this.state;
-						store.food = data;
-						this.setState({ store });
-						console.log(store.food);
-					});
-			},
+			searchBar: () => {},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
