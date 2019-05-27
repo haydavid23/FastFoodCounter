@@ -5,8 +5,8 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			food: [],
-			info: "",
+			burgerKing: [],
+			info: [],
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -38,6 +38,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			searchBar: search => console.log(search),
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

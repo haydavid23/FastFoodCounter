@@ -82,17 +82,18 @@ export class Home extends React.Component {
 
 								<div className="container d-inline">
 									<Typeahead
+										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={["sdfg", "sss"]}
+										options={["asdf", "wer"]}
 										className="w-50 mx-auto bar"
 										onInputChange={input => {
 											console.log(input);
 										}}
-										onChange={input => {
-											console.log(input);
+										onChange={selected => {
+											store.info.push(selected[0]);
+											console.log(store.info);
 										}}
-										value={this.state.value}
 									/>
 
 									<form>
@@ -109,7 +110,7 @@ export class Home extends React.Component {
 									<Button
 										type="submit"
 										className="d-inline-block float-right"
-										onClick={() => actions.searchBar("#food").tvalue}>
+										onClick={() => actions.searchBar(document.querySelector("#food"))}>
 										Add Food Item
 									</Button>
 								</div>
