@@ -11,6 +11,7 @@ import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Typeahead } from "react-bootstrap-typeahead";
+import InputGroup from "react-bootstrap/InputGroup";
 
 export class Home extends React.Component {
 	constructor() {
@@ -83,11 +84,32 @@ export class Home extends React.Component {
 									<Typeahead
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={["asd", "david"]}
+										options={["sdfg", "sss"]}
 										className="w-50 mx-auto bar"
-										onClick={() => actions.searchBar()}
+										onInputChange={input => {
+											console.log(input);
+										}}
+										onChange={input => {
+											console.log(input);
+										}}
+										value={this.state.value}
 									/>
-									<Button type="submit" className="d-inline-block float-right">
+
+									<form>
+										<div className="form-group">
+											<label>Full Name</label>
+											<input
+												type="search"
+												className="form-control"
+												placeholder="Full Name"
+												aria-expanded="true"
+											/>
+										</div>
+									</form>
+									<Button
+										type="submit"
+										className="d-inline-block float-right"
+										onClick={() => actions.searchBar("#food").tvalue}>
 										Add Food Item
 									</Button>
 								</div>

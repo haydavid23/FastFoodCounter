@@ -6,6 +6,7 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			food: [],
+			info: "",
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -36,7 +37,7 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
-			searchBar: () => {},
+			searchBar: search => console.log(search),
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

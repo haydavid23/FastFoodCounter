@@ -22,7 +22,7 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			fetch("https://trackapi.nutritionix.com/v2/search/instant", {
+			fetch("https://trackapi.nutritionix.com/v2/search/instant?query=w", {
 				headers: {
 					"x-app-key": "2865a994886d0e258357d55037e33f3b",
 					"x-remote-user-id": "0",
