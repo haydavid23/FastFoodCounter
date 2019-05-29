@@ -30,10 +30,13 @@ export class Home extends React.Component {
 	}
 
 	render() {
+		console.log(this.state.selectValue);
 		return (
 			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
+						store.fetcho = this.state.selectValue;
+						console.log(store.fetcho);
 						return (
 							<div className="container">
 								<Mainnav onDelete={() => this.setState({ showModal: true })} />
@@ -45,6 +48,7 @@ export class Home extends React.Component {
 									show={this.state.showModal}
 									onClose={() => this.setState({ showModal: false })}
 								/>
+
 								<h1> FAST FOOD COUNTER </h1>
 								<Carousel>
 									<Carousel.Item>
@@ -91,11 +95,11 @@ export class Home extends React.Component {
 									<Form.Group controlId="exampleForm.ControlSelect1" className="mx-auto" id="drop">
 										<Form.Label>Example select</Form.Label>
 										<Form.Control as="select" className="w-25" onChange={this.handleChange}>
-											<option value="mc">McDonalds</option>
-											<option value="bk">Burger King</option>
-											<option value="tc">Taco Bell</option>
-											<option value="kf">KFC</option>
-											<option value="we">Wendys</option>
+											<option value="McDonalds">McDonalds</option>
+											<option value="Burger King">Burger King</option>
+											<option value="Taco Bell">Taco Bell</option>
+											<option value="KFC">KFC</option>
+											<option value="Wendys">Wendys</option>
 										</Form.Control>
 									</Form.Group>
 								</Form>
@@ -105,7 +109,7 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={["burger", "wer"]}
+										options={["dd"]}
 										className="w-50 mx-auto bar"
 										onInputChange={input => {
 											console.log(input);
@@ -116,10 +120,7 @@ export class Home extends React.Component {
 										}}
 									/>
 
-									<Button
-										type="submit"
-										className="d-inline-block float-right"
-										onClick={() => actions.searchBar(document.querySelector("#food"))}>
+									<Button type="submit" className="d-inline-block float-right">
 										Add Food Item
 									</Button>
 								</div>
