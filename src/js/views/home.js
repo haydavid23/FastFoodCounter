@@ -17,11 +17,11 @@ import Dropdown from "react-bootstrap/Dropdown";
 export class Home extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			showModal: false,
 			selectValue: null
 		};
+
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -37,6 +37,7 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						store.fetcho = this.state.selectValue;
 						console.log(store.fetcho);
+
 						return (
 							<div className="container">
 								<Mainnav onDelete={() => this.setState({ showModal: true })} />
@@ -111,8 +112,8 @@ export class Home extends React.Component {
 										placeholder="Choose your Meal"
 										options={["dd"]}
 										className="w-50 mx-auto bar"
-										onInputChange={input => {
-											console.log(input);
+										onInputChange={() => {
+											actions.searchBar();
 										}}
 										onChange={selected => {
 											store.info.push(selected[0]);
