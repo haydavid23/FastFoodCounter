@@ -12,14 +12,23 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Typeahead } from "react-bootstrap-typeahead";
 import InputGroup from "react-bootstrap/InputGroup";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export class Home extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+
 		this.state = {
-			showModal: false
+			showModal: false,
+			selectValue: null
 		};
+		this.handleChange = this.handleChange.bind(this);
 	}
+
+	handleChange(event) {
+		this.setState({ selectValue: event.target.value });
+	}
+
 	render() {
 		return (
 			<div>
@@ -71,7 +80,6 @@ export class Home extends React.Component {
 										</Carousel.Caption>
 									</Carousel.Item>
 								</Carousel>
-
 								<div className="jumbotron bg-danger p-3">
 									<h1 className="display-4 bg-danger text-white text-center text-weight-bold">
 										TRY IT NOW!
@@ -79,13 +87,25 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<br />
+								<Form>
+									<Form.Group controlId="exampleForm.ControlSelect1" className="mx-auto" id="drop">
+										<Form.Label>Example select</Form.Label>
+										<Form.Control as="select" className="w-25" onChange={this.handleChange}>
+											<option value="mc">McDonalds</option>
+											<option value="bk">Burger King</option>
+											<option value="tc">Taco Bell</option>
+											<option value="kf">KFC</option>
+											<option value="we">Wendys</option>
+										</Form.Control>
+									</Form.Group>
+								</Form>
 
 								<div className="container d-inline">
 									<Typeahead
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={["asdf", "wer"]}
+										options={["burger", "wer"]}
 										className="w-50 mx-auto bar"
 										onInputChange={input => {
 											console.log(input);
@@ -96,17 +116,6 @@ export class Home extends React.Component {
 										}}
 									/>
 
-									<form>
-										<div className="form-group">
-											<label>Full Name</label>
-											<input
-												type="search"
-												className="form-control"
-												placeholder="Full Name"
-												aria-expanded="true"
-											/>
-										</div>
-									</form>
 									<Button
 										type="submit"
 										className="d-inline-block float-right"
@@ -114,7 +123,6 @@ export class Home extends React.Component {
 										Add Food Item
 									</Button>
 								</div>
-
 								<div className="container">
 									<Tablemain />
 								</div>
