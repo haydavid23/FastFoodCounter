@@ -110,7 +110,7 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={["dd"]}
+										options={[]}
 										className="w-50 mx-auto bar"
 										onInputChange={() => {
 											actions.searchBar();
