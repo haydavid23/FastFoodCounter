@@ -94,10 +94,14 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<br />
-								<Form>
-									<Form.Group controlId="exampleForm.ControlSelect1" className="mx-auto" id="drop">
-										<Form.Label>Example select</Form.Label>
-										<Form.Control as="select" className="w-25" onChange={this.handleChange}>
+								<Form className="text-center">
+									<Form.Group controlId="exampleForm.ControlSelect1" id="drop">
+										<Form.Label>Pick a Fast Food Chain</Form.Label>{" "}
+										<Form.Control
+											as="select"
+											className=" mx-auto w-25 search"
+											onChange={this.handleChange}>
+											<option className="text-center">----</option>
 											<option value="McDonalds">McDonalds</option>
 											<option value="Burger King">Burger King</option>
 											<option value="Taco Bell">Taco Bell</option>
@@ -106,10 +110,9 @@ export class Home extends React.Component {
 										</Form.Control>
 									</Form.Group>
 								</Form>
-
-								<div className="container d-inline">
+								<div className="container  mx-auto">
 									<Typeahead
-										className="w-25 mx-auto"
+										className="w-25 d-inline-block search"
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
@@ -122,8 +125,7 @@ export class Home extends React.Component {
 											console.log(store.info);
 										}}
 									/>
-
-									<Button type="submit" className="d-inline-block float-right">
+									<Button type="submit" className="d-inline-block ">
 										Add Food Item
 									</Button>
 								</div>
