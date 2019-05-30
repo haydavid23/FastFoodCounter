@@ -110,7 +110,7 @@ export class Home extends React.Component {
 										</Form.Control>
 									</Form.Group>
 								</Form>
-								<div className="container  mx-auto">
+								<div className="container d-flex flex-row justify-content-center">
 									<Typeahead
 										className="w-25 d-inline-block search"
 										id="food"
