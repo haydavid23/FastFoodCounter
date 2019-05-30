@@ -20,7 +20,8 @@ export class Home extends React.Component {
 		super(props);
 		this.state = {
 			showModal: false,
-			selectValue: null
+			selectValue: null,
+			selectType: ""
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -38,6 +39,7 @@ export class Home extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						store.fetcho = this.state.selectValue;
+						store.tableMain = this.state.selectType;
 						console.log(store.fetcho);
 
 						return (
@@ -116,13 +118,12 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={store.food}
+										options={store.info}
 										onInputChange={() => {
 											actions.searchBar();
 										}}
 										onChange={selected => {
-											store.info.push(selected[0]);
-											console.log(store.info);
+											this.setState({ selectType: selected });
 										}}
 									/>
 									<Button type="submit" className="d-inline-block ">
