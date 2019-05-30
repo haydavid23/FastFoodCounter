@@ -10,8 +10,8 @@ import { Tablemain } from "../component/tablemain.js";
 import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
-import { Typeahead, Menu } from "react-bootstrap-typeahead";
-import { MenuItem } from "react-bootstrap";
+import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
+
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -32,6 +32,7 @@ export class Home extends React.Component {
 
 	render() {
 		console.log(this.state.selectValue);
+		const TypeaheadMenuItem = menuItemContainer(MenuItem);
 		return (
 			<div>
 				<Context.Consumer>
@@ -108,11 +109,11 @@ export class Home extends React.Component {
 
 								<div className="container d-inline">
 									<Typeahead
+										className="w-25 mx-auto"
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={[store.food.toString()]}
-										className="w-50 mx-auto bar"
+										options={store.food}
 										onInputChange={() => {
 											actions.searchBar();
 										}}
