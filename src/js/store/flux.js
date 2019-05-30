@@ -5,7 +5,7 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			food: [],
+			food: "",
 			info: ["sfsdd", "dddd"],
 			fetcho: "",
 			day: new Date(),
@@ -52,7 +52,9 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 
 					.then(data => {
-						store.food = data;
+						store.food = data.common.map((item, index) => {
+							return item.food_name;
+						});
 						setStore({ store: store });
 					});
 			},

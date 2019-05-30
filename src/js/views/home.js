@@ -10,7 +10,8 @@ import { Tablemain } from "../component/tablemain.js";
 import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
-import { Typeahead } from "react-bootstrap-typeahead";
+import { Typeahead, Menu } from "react-bootstrap-typeahead";
+import { MenuItem } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -110,7 +111,7 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={[]}
+										options={[store.food.toString()]}
 										className="w-50 mx-auto bar"
 										onInputChange={() => {
 											actions.searchBar();
