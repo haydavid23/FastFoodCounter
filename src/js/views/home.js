@@ -110,15 +110,15 @@ export class Home extends React.Component {
 								<div className="container d-flex flex-row justify-content-center">
 									<Typeahead
 										className="w-25 d-inline-block search"
-										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
 										options={store.common.concat(store.branded)}
+										id="food"
 									/>
 									<Button
 										type="submit"
 										className="d-inline-block"
-										onClick={() => actions.addFood(document.querySelector("#food").value)}>
+										onClick={() => actions.addFood(document.querySelector("#food").input)}>
 										Add Food Item
 									</Button>
 								</div>
