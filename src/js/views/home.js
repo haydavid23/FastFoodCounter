@@ -19,7 +19,8 @@ export class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showModal: false
+			showModal: false,
+			select: ""
 		};
 
 		// this.handleChange = this.handleChange.bind(this);
@@ -112,12 +113,12 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={store.food}
-										onInputChange={() => {
-											actions.searchBar();
-										}}
+										options={store.common.concat(store.branded)}
 									/>
-									<Button type="submit" className="d-inline-block" onClick={() => actions.addFood()}>
+									<Button
+										type="submit"
+										className="d-inline-block"
+										onClick={() => actions.addFood(document.querySelector("#food").value)}>
 										Add Food Item
 									</Button>
 								</div>
