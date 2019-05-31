@@ -4,6 +4,7 @@ import "../../styles/home.scss";
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
 import { Modal } from "../component/modallogin";
+import { Select } from "../component/dropdown";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
@@ -11,7 +12,6 @@ import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
-
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -25,27 +25,27 @@ export class Home extends React.Component {
 			apiData: ""
 		};
 
-		this.handleChange = this.handleChange.bind(this);
+		// this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange(event) {
-		this.setState({ selectValue: event.target.value });
-		fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + this.selectValue, {
-			headers: {
-				"x-app-key": "2865a994886d0e258357d55037e33f3b",
-				"x-remote-user-id": "0",
-				"x-app-id": "da0a3819"
-			}
-		})
-			.then(response => response.json())
-			.then(data => {
-				this.setState({
-					apiData: data.common.map((item, index) => {
-						return item.food_name;
-					})
-				});
-			});
-	}
+	// handleChange(event) {
+	// 	this.setState({ selectValue: event.target.value });
+	// 	fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + this.selectValue, {
+	// 		headers: {
+	// 			"x-app-key": "2865a994886d0e258357d55037e33f3b",
+	// 			"x-remote-user-id": "0",
+	// 			"x-app-id": "da0a3819"
+	// 		}
+	// 	})
+	// 		.then(response => response.json())
+	// 		.then(data => {
+	// 			this.setState({
+	// 				apiData: data.common.map((item, index) => {
+	// 					return item.food_name;
+	// 				})
+	// 			});
+	// 		});
+	// }
 
 	render() {
 		console.log(this.state.selectValue);
@@ -112,6 +112,7 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<br />
+								<Select />
 								<Form className="text-center">
 									<Form.Group controlId="exampleForm.ControlSelect1" id="drop">
 										<Form.Label>Pick a Fast Food Chain</Form.Label>{" "}

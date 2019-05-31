@@ -39,7 +39,6 @@ const injectContext = PassedComponent => {
 		// }
 
 		render() {
-			console.log(this.state.store.food);
 			return (
 				<Context.Provider value={this.state}>
 					<PassedComponent {...this.props} />
