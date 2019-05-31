@@ -48,7 +48,6 @@ export class Home extends React.Component {
 	// }
 
 	render() {
-		console.log(this.state.selectValue);
 		const TypeaheadMenuItem = menuItemContainer(MenuItem);
 		return (
 			<div>
@@ -56,7 +55,6 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						store.fetcho = this.state.selectValue;
 						store.tableMain = this.state.selectType;
-						console.log(store.fetcho);
 
 						return (
 							<div className="container">
@@ -112,23 +110,9 @@ export class Home extends React.Component {
 								</div>
 								<br />
 								<br />
+
 								<Select />
-								<Form className="text-center">
-									<Form.Group controlId="exampleForm.ControlSelect1" id="drop">
-										<Form.Label>Pick a Fast Food Chain</Form.Label>{" "}
-										<Form.Control
-											as="select"
-											className=" mx-auto w-25 search"
-											onChange={this.handleChange}>
-											<option className="text-center">----</option>
-											<option value="McDonalds">McDonalds</option>
-											<option value="Burger King">Burger King</option>
-											<option value="Taco Bell">Taco Bell</option>
-											<option value="KFC">KFC</option>
-											<option value="Wendys">Wendys</option>
-										</Form.Control>
-									</Form.Group>
-								</Form>
+
 								<div className="container d-flex flex-row justify-content-center">
 									<Typeahead
 										className="w-25 d-inline-block search"

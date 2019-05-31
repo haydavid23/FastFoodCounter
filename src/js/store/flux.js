@@ -5,6 +5,7 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			query: "",
 			food: [],
 			info: ["sfsdd", "dddd"],
 			selected: "",
@@ -60,7 +61,10 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			selection: select => {
-				console.log(select);
+				const store = getStore();
+				store.query = select;
+				setStore({ store: store });
+				console.log(store.query);
 			}
 		}
 	};
