@@ -114,11 +114,14 @@ export class Home extends React.Component {
 										placeholder="Choose your Meal"
 										options={store.common.concat(store.branded)}
 										id="food"
+										onChange={selected => {
+											this.setState({ select: selected[0] });
+										}}
 									/>
 									<Button
 										type="submit"
 										className="d-inline-block"
-										onClick={() => actions.addFood(document.querySelector("#food").input)}>
+										onClick={() => actions.addFood(this.state.select)}>
 										Add Food Item
 									</Button>
 								</div>

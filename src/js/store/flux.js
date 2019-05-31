@@ -100,10 +100,10 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			addFood: selected => {
-				// const store = getStore();
+				const store = getStore();
 				console.log(selected);
-				// store.tableMain = selected;
-				// setStore({ store: store });
+				store.tableMain = selected;
+				setStore({ store: store });
 			}
 		}
 	};

@@ -35,7 +35,7 @@ export class Tablemain extends React.Component {
 									<tbody>
 										<tr>
 											<th scope="row" className="text-center">
-												{"Big Mac"}
+												{store.tableMain}
 											</th>
 											<th scope="row" className="text-center">
 												{" "}
