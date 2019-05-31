@@ -65,6 +65,21 @@ const getState = ({ getStore, setStore }) => {
 				store.query = select;
 				setStore({ store: store });
 				console.log(store.query);
+				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + store.query, {
+					headers: {
+						"x-app-key": "2865a994886d0e258357d55037e33f3b",
+						"x-remote-user-id": "0",
+						"x-app-id": "da0a3819"
+					}
+				})
+					.then(response => response.json())
+					.then(data => {
+						store.food = data.common.map((item, index) => {
+							return item.food_name;
+						});
+						setStore({ store: store });
+						console.log(store.food);
+					});
 			}
 		}
 	};
