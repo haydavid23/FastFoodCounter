@@ -5,11 +5,12 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			tableMain: "",
 			query: "",
 			food: [],
 			info: ["sfsdd", "dddd"],
 			selected: "",
-			tableMain: "",
+
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -80,6 +81,13 @@ const getState = ({ getStore, setStore }) => {
 						setStore({ store: store });
 						console.log(store.food);
 					});
+			},
+
+			addFood: selected => {
+				// const store = getStore();
+				console.log(selected);
+				// store.tableMain = selected;
+				// setStore({ store: store });
 			}
 		}
 	};

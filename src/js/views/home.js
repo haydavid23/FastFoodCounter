@@ -19,10 +19,7 @@ export class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showModal: false,
-			selectValue: null,
-			selectType: "",
-			apiData: ""
+			showModal: false
 		};
 
 		// this.handleChange = this.handleChange.bind(this);
@@ -48,14 +45,10 @@ export class Home extends React.Component {
 	// }
 
 	render() {
-		const TypeaheadMenuItem = menuItemContainer(MenuItem);
 		return (
 			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						store.fetcho = this.state.selectValue;
-						store.tableMain = this.state.selectType;
-
 						return (
 							<div className="container">
 								<Mainnav onDelete={() => this.setState({ showModal: true })} />
@@ -119,15 +112,12 @@ export class Home extends React.Component {
 										id="food"
 										labelKey="name"
 										placeholder="Choose your Meal"
-										options={store.info}
+										options={store.food}
 										onInputChange={() => {
 											actions.searchBar();
 										}}
-										onChange={selected => {
-											this.setState({ selectType: selected });
-										}}
 									/>
-									<Button type="submit" className="d-inline-block ">
+									<Button type="submit" className="d-inline-block" onClick={() => actions.addFood()}>
 										Add Food Item
 									</Button>
 								</div>

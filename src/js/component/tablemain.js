@@ -34,7 +34,9 @@ export class Tablemain extends React.Component {
 
 									<tbody>
 										<tr>
-											<th scope="row">{store.tableMain}</th>
+											<th scope="row" className="text-center">
+												{store.tableMain}
+											</th>
 											<th scope="row" className="text-center">
 												{" "}
 												400{" "}
