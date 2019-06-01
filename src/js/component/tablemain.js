@@ -38,8 +38,7 @@ export class Tablemain extends React.Component {
 												{store.tableMain}
 											</th>
 											<th scope="row" className="text-center">
-												{" "}
-												400{" "}
+												{store.calories}
 											</th>
 											<th scope="row">
 												<Workouts />
