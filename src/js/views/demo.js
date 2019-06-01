@@ -33,14 +33,7 @@ export class Demo extends React.Component {
 								<h1 className="text-center">
 									<strong>Time to Burn Some Calories!</strong>
 								</h1>
-								<div>
-									<Form inline className="justify-content-center">
-										<FormControl type="text" placeholder="Search" className=" mr-sm-2 w-50 bar" />
-
-										<Button type="submit">Add Food Item</Button>
-									</Form>
-								</div>
-								<br />
+								<div />
 								<div className="text-center">
 									<i className="fas fa-caret-square-left arrow" onClick={() => actions.changeDay()}>
 										{" "}
@@ -75,9 +68,6 @@ export class Demo extends React.Component {
 								<div id="ove">
 									<Tableuser onDelete={() => this.setState({ showModal: true })} />
 								</div>
-								<i className="fas fa-plus" id="plus">
-									<span className="font-weight-bold">Add Another Food Ite</span>
-								</i>
 								<br />
 								<br />
 								<br />

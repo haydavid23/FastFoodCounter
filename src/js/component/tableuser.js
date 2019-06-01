@@ -17,7 +17,6 @@ export class Tableuser extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container d-inline">
-								<i id="x" className="fas fa-times fa-2x float-right" />
 								<table className="table table-bordered table-dark mt-auto w-100" id="table">
 									<thead>
 										<tr>
@@ -49,9 +48,10 @@ export class Tableuser extends React.Component {
 												<Workouts />
 											</th>
 											<th scope="row" />
-										</tr>{" "}
+										</tr>
 									</tbody>
 								</table>
+								<i id="x" className="fas fa-times fa-2x float-right" scope="row" />
 							</div>
 						);
 					}}
