@@ -10,7 +10,8 @@ const getState = ({ getStore, setStore }) => {
 			common: [],
 			branded: [],
 			info: ["sfsdd", "dddd"],
-			selected: "",
+			selected: [],
+			calories: [],
 
 			day: new Date(),
 			previousDay: "",
@@ -102,8 +103,31 @@ const getState = ({ getStore, setStore }) => {
 			addFood: selected => {
 				const store = getStore();
 				console.log(selected);
+				console.log(store.calories);
 				store.tableMain = selected;
 				setStore({ store: store });
+
+				fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						"x-app-key": "2865a994886d0e258357d55037e33f3b",
+						"x-remote-user-id": "0",
+						"x-app-id": "da0a3819"
+					},
+					body: JSON.stringify({
+						query: store.tableMain,
+						timezone: "US/Eastern"
+					})
+				})
+					.then(response => response.json())
+
+					.then(res => {
+						store.calories = res.foods.map((item, index) => {
+							return item.nf_calories;
+						});
+						setStore({ store: store });
+					});
 			}
 		}
 	};
