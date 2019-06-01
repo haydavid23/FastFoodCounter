@@ -7,11 +7,10 @@ const getState = ({ getStore, setStore }) => {
 		store: {
 			tableContent: "",
 			query: "",
+			calories: "",
 			common: [],
 			branded: [],
-
 			selected: [],
-			calories: [],
 
 			day: new Date(),
 			previousDay: "",
@@ -28,19 +27,6 @@ const getState = ({ getStore, setStore }) => {
 				"October",
 				"November",
 				"December"
-			],
-
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
 			]
 		},
 
@@ -63,7 +49,6 @@ const getState = ({ getStore, setStore }) => {
 							return item.food_name;
 						});
 						setStore({ store: store });
-						console.log(store.food);
 					});
 
 				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + store.query, {
