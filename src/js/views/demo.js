@@ -2,12 +2,13 @@ import React from "react";
 import { Tableuser } from "../component/tableuser.js";
 import "../../styles/demo.scss";
 import { Context } from "../store/appContext.js";
-
+import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import { Usernav } from "../component/usernav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
+import { Select } from "../component/dropdown";
 
 export class Demo extends React.Component {
 	constructor() {
@@ -52,8 +53,26 @@ export class Demo extends React.Component {
 									<i className="fas fa-caret-square-right arrow " />
 								</div>
 								<br />
+								<Select />
+								<div className="container d-flex flex-row justify-content-center">
+									<Typeahead
+										className="w-25 d-inline-block search"
+										labelKey="name"
+										placeholder="Choose your Meal"
+										options={store.common.concat(store.branded)}
+										id="food"
+										onChange={selected => {
+											this.setState({ select: selected[0] });
+										}}
+									/>
+									<Button
+										type="submit"
+										className="d-inline-block"
+										onClick={() => actions.addFood(this.state.select)}>
+										Add Food Item
+									</Button>
+								</div>
 								<div id="ove">
-									<Tableuser onDelete={() => this.setState({ showModal: true })} />
 									<Tableuser onDelete={() => this.setState({ showModal: true })} />
 								</div>
 								<i className="fas fa-plus" id="plus">

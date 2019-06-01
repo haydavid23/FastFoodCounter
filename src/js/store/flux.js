@@ -5,11 +5,11 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			tableMain: "",
+			tableContent: "",
 			query: "",
 			common: [],
 			branded: [],
-			info: ["sfsdd", "dddd"],
+
 			selected: [],
 			calories: [],
 
@@ -104,7 +104,7 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				console.log(selected);
 				console.log(store.calories);
-				store.tableMain = selected;
+				store.tableContent = selected;
 				setStore({ store: store });
 
 				fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
@@ -116,7 +116,7 @@ const getState = ({ getStore, setStore }) => {
 						"x-app-id": "da0a3819"
 					},
 					body: JSON.stringify({
-						query: store.tableMain,
+						query: store.tableContent,
 						timezone: "US/Eastern"
 					})
 				})
