@@ -5,6 +5,7 @@ import injectContext from "../store/appContext.js";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			qty: [],
 			tableContent: "",
 			query: "",
 			calories: "",

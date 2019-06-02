@@ -48,16 +48,16 @@ export class Tablemain extends React.Component {
 													<td scope="row">
 														<Form>
 															<Form.Group controlId="exampleForm.ControlSelect1">
-																<Form.Control as="select">
-																	<option>1</option>
-																	<option>2</option>
-																	<option>3</option>
+																<Form.Control as="select" id="qty">
+																	<option value="1">1</option>
+																	<option value="2">2</option>
+																	<option value="3">3</option>
 																</Form.Control>
 															</Form.Group>
 														</Form>
 													</td>
 
-													<td scope="row" className="text-center">
+													<td scope="row" className="text-center" id="cal">
 														{item[0].nf_calories}
 													</td>
 													<td scope="row">
