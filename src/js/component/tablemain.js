@@ -20,6 +20,10 @@ export class Tablemain extends React.Component {
 											<th scope="col" className="text-center">
 												Food Item
 											</th>
+
+											<th scope="col" className="text-center">
+												QTY
+											</th>
 											<th scope="col" className="text-center ">
 												Calories
 											</th>
@@ -40,6 +44,7 @@ export class Tablemain extends React.Component {
 													<td scope="row" className="text-center">
 														{item[0].food_name}
 													</td>
+													<td scope="row" />
 
 													<td scope="row" className="text-center">
 														{item[0].nf_calories}
