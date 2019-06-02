@@ -33,18 +33,24 @@ export class Tablemain extends React.Component {
 									</thead>
 
 									<tbody>
-										<tr>
-											<th scope="row" className="text-center">
-												{store.tableContent}
-											</th>
-											<th scope="row" className="text-center">
-												{store.calories}
-											</th>
-											<th scope="row">
-												<Workouts />
-											</th>
-											<th scope="row" />
-										</tr>{" "}
+										{store.foods.map((item, index) => {
+											console.log(item);
+											return (
+												<tr key={index}>
+													<td key={index} scope="row" className="text-center">
+														{item[0].food_name}
+													</td>
+
+													<td key={index} scope="row" className="text-center">
+														{item[0].nf_calories}
+													</td>
+													<td scope="row">
+														<Workouts />
+													</td>
+													<td scope="row" />
+												</tr>
+											);
+										})}
 									</tbody>
 								</table>
 							</div>

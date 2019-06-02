@@ -11,6 +11,7 @@ const getState = ({ getStore, setStore }) => {
 			common: [],
 			branded: [],
 			selected: [],
+			foods: [],
 
 			day: new Date(),
 			previousDay: "",
@@ -90,9 +91,7 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 
 					.then(res => {
-						store.calories = res.foods.map((item, index) => {
-							return item.nf_calories;
-						});
+						store.foods.push(res.foods);
 						setStore({ store: store });
 					});
 			}
