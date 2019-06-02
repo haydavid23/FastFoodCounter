@@ -37,17 +37,20 @@ export class Tablemain extends React.Component {
 											console.log(item);
 											return (
 												<tr key={index}>
-													<td key={index} scope="row" className="text-center">
+													<td scope="row" className="text-center">
 														{item[0].food_name}
 													</td>
 
-													<td key={index} scope="row" className="text-center">
+													<td scope="row" className="text-center">
 														{item[0].nf_calories}
 													</td>
 													<td scope="row">
 														<Workouts />
 													</td>
-													<td scope="row" />
+													<td scope="row" className="text-center">
+														{"500"}
+														<i id="x" className="fas fa-times fa-2x float-right" />
+													</td>
 												</tr>
 											);
 										})}
