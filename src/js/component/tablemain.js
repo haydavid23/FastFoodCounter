@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/table.scss";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Workouts } from "../component/workouts.js";
@@ -44,7 +45,17 @@ export class Tablemain extends React.Component {
 													<td scope="row" className="text-center">
 														{item[0].food_name}
 													</td>
-													<td scope="row" />
+													<td scope="row">
+														<Form>
+															<Form.Group controlId="exampleForm.ControlSelect1">
+																<Form.Control as="select">
+																	<option>1</option>
+																	<option>2</option>
+																	<option>3</option>
+																</Form.Control>
+															</Form.Group>
+														</Form>
+													</td>
 
 													<td scope="row" className="text-center">
 														{item[0].nf_calories}
