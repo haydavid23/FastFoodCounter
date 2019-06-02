@@ -54,7 +54,11 @@ export class Tablemain extends React.Component {
 													</td>
 													<td scope="row" className="text-center">
 														{"500"}
-														<i id="x" className="fas fa-times fa-2x float-right" />
+														<i
+															id="x"
+															className="fas fa-times fa-2x float-right"
+															onClick={() => actions.delButton(index)}
+														/>
 													</td>
 												</tr>
 											);

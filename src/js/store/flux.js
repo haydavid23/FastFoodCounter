@@ -94,6 +94,12 @@ const getState = ({ getStore, setStore }) => {
 						store.foods.push(res.foods);
 						setStore({ store: store });
 					});
+			},
+
+			delButton: id => {
+				const store = getStore();
+				store.foods.splice(id, 1);
+				setStore({ store: store });
 			}
 		}
 	};
