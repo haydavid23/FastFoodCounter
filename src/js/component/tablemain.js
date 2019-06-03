@@ -8,6 +8,13 @@ import { Workouts } from "../component/workouts.js";
 import { Context } from "../store/appContext.js";
 
 export class Tablemain extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			initialValue: 1
+		};
+	}
+
 	render() {
 		return (
 			<div>
@@ -49,13 +56,14 @@ export class Tablemain extends React.Component {
 														<Form>
 															<Form.Group controlId="exampleForm.ControlSelect1">
 																<Form.Control
+																	name="qty"
 																	as="select"
-																	id="qty"
-																	defaultValue="1"
 																	onChange={() =>
-																		actions.qtySelected(
-																			document.querySelector("#qty").value
-																		)
+																		this.setState({
+																			initialValue: document.querySelector(
+																				"[name=qty]"
+																			).value
+																		})
 																	}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -66,8 +74,9 @@ export class Tablemain extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item[0].nf_calories}
+														{item[0].nf_calories * this.state.initialValue}
 													</td>
+
 													<td scope="row">
 														<Workouts />
 													</td>
