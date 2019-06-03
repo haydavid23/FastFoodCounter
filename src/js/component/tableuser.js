@@ -10,6 +10,13 @@ import { Workouts } from "../component/workouts.js";
 import { Context } from "../store/appContext.js";
 
 export class Tableuser extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			initialValue: 1
+		};
+	}
+
 	render() {
 		return (
 			<div>
@@ -22,6 +29,10 @@ export class Tableuser extends React.Component {
 										<tr>
 											<th scope="col" className="text-center">
 												Food Item
+											</th>
+
+											<th scope="col" className="text-center">
+												QTY
 											</th>
 											<th scope="col" className="text-center ">
 												Calories
@@ -36,22 +47,54 @@ export class Tableuser extends React.Component {
 									</thead>
 
 									<tbody>
-										<tr>
-											<th scope="row" className="text-center">
-												{store.tableContent}
-											</th>
+										{store.foods.map((item, index) => {
+											console.log(item);
+											return (
+												<tr key={index}>
+													<td scope="row" className="text-center">
+														{item[0].food_name}
+													</td>
+													<td scope="row">
+														<Form>
+															<Form.Group controlId="exampleForm.ControlSelect1">
+																<Form.Control
+																	name="qty"
+																	as="select"
+																	onChange={() =>
+																		this.setState({
+																			initialValue: document.querySelector(
+																				"[name=qty]"
+																			).value
+																		})
+																	}>
+																	<option value="1">1</option>
+																	<option value="2">2</option>
+																	<option value="3">3</option>
+																</Form.Control>
+															</Form.Group>
+														</Form>
+													</td>
 
-											<th scope="row" className="text-center">
-												{store.calories}
-											</th>
-											<th scope="row">
-												<Workouts />
-											</th>
-											<th scope="row" />
-										</tr>
+													<td scope="row" className="text-center" id="cal">
+														{item[0].nf_calories * this.state.initialValue}
+													</td>
+
+													<td scope="row">
+														<Workouts />
+													</td>
+													<td scope="row" className="text-center">
+														{"500"}
+														<i
+															id="x"
+															className="fas fa-times fa-2x float-right"
+															onClick={() => actions.delButton(index)}
+														/>
+													</td>
+												</tr>
+											);
+										})}
 									</tbody>
 								</table>
-								<i id="x" className="fas fa-times fa-2x float-right" scope="row" />
 							</div>
 						);
 					}}

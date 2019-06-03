@@ -14,7 +14,8 @@ export class Demo extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			showModal: false
+			showModal: false,
+			select: ""
 		};
 	}
 
@@ -49,6 +50,7 @@ export class Demo extends React.Component {
 								<Select />
 								<div className="container d-flex flex-row justify-content-center">
 									<Typeahead
+										ref={typeahead => (this.typeahead = typeahead)}
 										className="w-25 d-inline-block search"
 										labelKey="name"
 										placeholder="Choose your Meal"
@@ -61,7 +63,9 @@ export class Demo extends React.Component {
 									<Button
 										type="submit"
 										className="d-inline-block"
-										onClick={() => actions.addFood(this.state.select)}>
+										onClick={() =>
+											actions.addFood(this.state.select, this.typeahead.getInstance().clear())
+										}>
 										Add Food Item
 									</Button>
 								</div>
