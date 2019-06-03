@@ -18,7 +18,9 @@ export class Select extends React.Component {
 										id="drop"
 										className=" mx-auto w-25 search"
 										onChange={() => actions.selection(document.querySelector("#drop").value)}>
-										<option className="text-center">----</option>
+										<option id="dv" className="text-center">
+											----
+										</option>
 										<option value="McDonalds">McDonalds</option>
 										<option value="Burger King">Burger King</option>
 										<option value="Taco Bell">Taco Bell</option>

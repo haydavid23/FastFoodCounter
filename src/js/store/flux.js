@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
 import injectContext from "../store/appContext.js";
+import Form from "react-bootstrap/FormGroup";
 
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			qty: [],
 			tableContent: "",
 			query: "",
 			calories: "",
@@ -33,6 +33,10 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
+			qtySelected: qty => {
+				console.log(qty);
+			},
+
 			selection: select => {
 				const store = getStore();
 				store.query = select;
@@ -69,7 +73,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 
-			addFood: selected => {
+			addFood: (selected, clear) => {
 				const store = getStore();
 				console.log(selected);
 				console.log(store.calories);
@@ -95,6 +99,9 @@ const getState = ({ getStore, setStore }) => {
 						store.foods.push(res.foods);
 						setStore({ store: store });
 					});
+				document.querySelector("#drop").value = "----";
+
+				clear;
 			},
 
 			delButton: id => {

@@ -48,7 +48,15 @@ export class Tablemain extends React.Component {
 													<td scope="row">
 														<Form>
 															<Form.Group controlId="exampleForm.ControlSelect1">
-																<Form.Control as="select" id="qty">
+																<Form.Control
+																	as="select"
+																	id="qty"
+																	defaultValue="1"
+																	onChange={() =>
+																		actions.qtySelected(
+																			document.querySelector("#qty").value
+																		)
+																	}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>
