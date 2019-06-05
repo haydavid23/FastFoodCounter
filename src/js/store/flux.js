@@ -35,8 +35,8 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			qtySelected: (qty, index) => {
 				const store = getStore();
-				store.foods[index].serving_qty = qty;
-				console.log(store.foods[index].serving_qty);
+				let newqty = store.foods.serving_qty[index] * qty;
+				newqty.foods.serving_qty = setStore({ serving_qty: newqty });
 			},
 
 			selection: select => {
