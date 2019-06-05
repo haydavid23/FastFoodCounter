@@ -39,8 +39,8 @@ const getState = ({ getStore, setStore }) => {
 
 			selection: select => {
 				const store = getStore();
-				store.query = select;
-				setStore({ store: store });
+				let query = select;
+				setStore({ query: query });
 				console.log(store.query);
 				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + store.query, {
 					headers: {
@@ -51,10 +51,10 @@ const getState = ({ getStore, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
-						store.common = data.common.map((item, index) => {
+						let common = data.common.map((item, index) => {
 							return item.food_name;
 						});
-						setStore({ store: store });
+						setStore({ common: common });
 					});
 
 				fetch("https://trackapi.nutritionix.com/v2/search/instant?query=" + store.query, {
@@ -66,10 +66,10 @@ const getState = ({ getStore, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
-						store.branded = data.branded.map((item, index) => {
+						let branded = data.branded.map((item, index) => {
 							return item.food_name;
 						});
-						setStore({ store: store });
+						setStore({ branded: branded });
 					});
 			},
 
@@ -77,8 +77,8 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				console.log(selected);
 				console.log(store.calories);
-				store.tableContent = selected;
-				setStore({ store: store });
+				let tablecontent = selected;
+				setStore({ tableContent: tablecontent });
 
 				fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
 					method: "POST",
@@ -96,8 +96,8 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 
 					.then(res => {
-						store.foods.push(res.foods);
-						setStore({ store: store });
+						let foods = store.foods.concat(res.foods);
+						setStore({ foods: foods });
 					});
 				document.querySelector("#drop").value = "----";
 

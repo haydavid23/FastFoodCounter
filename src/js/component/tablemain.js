@@ -50,7 +50,7 @@ export class Tablemain extends React.Component {
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
-														{item[0].food_name}
+														{item.food_name}
 													</td>
 													<td scope="row">
 														<Form>
@@ -74,7 +74,7 @@ export class Tablemain extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item[0].nf_calories * this.state.initialValue}
+														{item.nf_calories}
 													</td>
 
 													<td scope="row">
@@ -85,7 +85,7 @@ export class Tablemain extends React.Component {
 														<i
 															id="x"
 															className="fas fa-times fa-2x float-right"
-															onClick={() => actions.delButton(index)}
+															onClick={() => actions.delButton()}
 														/>
 													</td>
 												</tr>
