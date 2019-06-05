@@ -52,7 +52,7 @@ export class Tableuser extends React.Component {
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
-														{item[0].food_name}
+														{item.food_name}
 													</td>
 													<td scope="row">
 														<Form>
@@ -76,7 +76,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item[0].nf_calories * this.state.initialValue}
+														{item.nf_calories}
 													</td>
 
 													<td scope="row">

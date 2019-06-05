@@ -33,9 +33,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			qtySelected: qty => {
-				console.log(qty);
-			},
+			qtySelected: (qty, index) => {},
 
 			selection: select => {
 				const store = getStore();

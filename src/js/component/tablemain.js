@@ -59,11 +59,10 @@ export class Tablemain extends React.Component {
 																	name="qty"
 																	as="select"
 																	onChange={() =>
-																		this.setState({
-																			initialValue: document.querySelector(
-																				"[name=qty]"
-																			).value
-																		})
+																		actions.qtySelected(
+																			document.querySelector("[name=qty]").value
+																				.index
+																		)
 																	}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
