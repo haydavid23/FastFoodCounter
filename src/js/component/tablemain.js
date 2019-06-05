@@ -46,7 +46,6 @@ export class Tablemain extends React.Component {
 
 									<tbody>
 										{store.foods.map((item, index) => {
-											console.log(item);
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
@@ -60,8 +59,8 @@ export class Tablemain extends React.Component {
 																	as="select"
 																	onChange={() =>
 																		actions.qtySelected(
-																			document.querySelector("[name=qty]").value
-																				.index
+																			document.querySelector("[name=qty]").value,
+																			index
 																		)
 																	}>
 																	<option value="1">1</option>
@@ -73,7 +72,7 @@ export class Tablemain extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item.nf_calories}
+														{item.nf_calories * store.foods[index].serving_qty}
 													</td>
 
 													<td scope="row">

@@ -33,7 +33,11 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			qtySelected: (qty, index) => {},
+			qtySelected: (qty, index) => {
+				const store = getStore();
+				store.foods[index].serving_qty = qty;
+				console.log(store.foods[index].serving_qty);
+			},
 
 			selection: select => {
 				const store = getStore();
@@ -73,8 +77,7 @@ const getState = ({ getStore, setStore }) => {
 
 			addFood: (selected, clear) => {
 				const store = getStore();
-				console.log(selected);
-				console.log(store.calories);
+
 				let tablecontent = selected;
 				setStore({ tableContent: tablecontent });
 
