@@ -12,7 +12,8 @@ const getState = ({ getStore, setStore }) => {
 			common: [],
 			branded: [],
 			selected: [],
-			foods: [],
+			foodCatalog: [],
+			selectedFoods: [],
 
 			day: new Date(),
 			previousDay: "",
@@ -35,8 +36,19 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			qtySelected: (qty, index) => {
 				const store = getStore();
-				let newqty = store.foods[index].serving_qty * qty;
-				store.foods[index].serving_qty = setStore({ store: newqty });
+				console.log("Store: ", store);
+				let newqty = store.foodCatalog[index].serving_qty * qty;
+
+				setStore({
+					selectedFoods: store.selectedFoods.map((f, i) => {
+						if (i == index) {
+							let food = Object.assign({}, f);
+							food.serving_qty = newqty;
+							return food;
+						}
+						return f;
+					})
+				});
 			},
 
 			selection: select => {
@@ -97,8 +109,11 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 
 					.then(res => {
-						let foods = store.foods.concat(res.foods);
-						setStore({ foods: foods });
+						let foodCatalog = store.foodCatalog.concat(res.foods);
+						setStore({
+							foodCatalog: foodCatalog,
+							selectedFoods: foodCatalog
+						});
 					});
 				document.querySelector("#drop").value = "----";
 

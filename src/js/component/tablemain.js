@@ -45,7 +45,7 @@ export class Tablemain extends React.Component {
 									</thead>
 
 									<tbody>
-										{store.foods.map((item, index) => {
+										{store.selectedFoods.map((item, index) => {
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
@@ -57,11 +57,9 @@ export class Tablemain extends React.Component {
 																<Form.Control
 																	name="qty"
 																	as="select"
-																	onChange={() =>
-																		actions.qtySelected(
-																			document.querySelector("[name=qty]").value,
-																			index
-																		)
+																	onChange={e =>
+																		console.log(e.target.value) ||
+																		actions.qtySelected(e.target.value, index)
 																	}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
