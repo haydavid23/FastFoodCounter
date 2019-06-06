@@ -47,7 +47,7 @@ export class Tableuser extends React.Component {
 									</thead>
 
 									<tbody>
-										{store.foods.map((item, index) => {
+										{store.selectedFoods.map((item, index) => {
 											console.log(item);
 											return (
 												<tr key={index}>
@@ -60,12 +60,9 @@ export class Tableuser extends React.Component {
 																<Form.Control
 																	name="qty"
 																	as="select"
-																	onChange={() =>
-																		this.setState({
-																			initialValue: document.querySelector(
-																				"[name=qty]"
-																			).value
-																		})
+																	onChange={e =>
+																		console.log(e.target.value) ||
+																		actions.qtySelected(e.target.value, index)
 																	}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -76,7 +73,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item.nf_calories}
+														{item.nf_calories * item.serving_qty}
 													</td>
 
 													<td scope="row">
