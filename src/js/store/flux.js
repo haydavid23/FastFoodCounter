@@ -122,7 +122,7 @@ const getState = ({ getStore, setStore }) => {
 
 			delButton: id => {
 				const store = getStore();
-				store.foods.splice(id, 1);
+				store.selectedFoods.splice(id, 1);
 				setStore({ store: store });
 			}
 		}
