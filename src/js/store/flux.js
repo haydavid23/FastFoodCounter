@@ -38,28 +38,25 @@ const getState = ({ getStore, setStore }) => {
 			jwtToken: (email, password) => {
 				console.log(email);
 				console.log(password);
-			},
-			// jwtToken: () => {
-			// 	fetch(" https://3000-c387acf4-5ed4-4110-be00-0948c845e5c8.ws-us0.gitpod.io/login", {
-			// 		method: "POST",
-			// 		headers: {
-			// 			"Content-Type": "application/json"
-			// 		},
-			// 		body: JSON.stringify({
-			// 			username: store.tableContent,
-			// 			password: "US/Eastern"
-			// 		})
-			// 	})
-			// 		.then(response => response.json())
 
-			// 		.then(res => {
-			// 			let foodCatalog = store.foodCatalog.concat(res.foods);
-			// 			setStore({
-			// 				foodCatalog: foodCatalog,
-			// 				selectedFoods: foodCatalog
-			// 			});
-			// 		});
-			// },
+				fetch(" https://3000-c387acf4-5ed4-4110-be00-0948c845e5c8.ws-us0.gitpod.io/login", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				})
+					.then(response => response.json())
+
+					.then(res => {
+						setStore({
+							jwtToken: res
+						});
+					});
+			},
 
 			qtySelected: (qty, index) => {
 				const store = getStore();
