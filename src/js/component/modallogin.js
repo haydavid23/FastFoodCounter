@@ -72,7 +72,13 @@ export class Modal extends React.Component {
 													Password
 												</Form.Label>
 												<Col sm={10}>
-													<Form.Control type="password" placeholder="Password" />
+													<Form.Control
+														type="password"
+														placeholder="Password"
+														onChange={e => this.setState({ password: e.target.value })}
+														value={this.state.password}
+														id="password"
+													/>
 												</Col>
 											</Form.Group>
 											<div>
@@ -80,7 +86,9 @@ export class Modal extends React.Component {
 													<button
 														type="button"
 														className="btn btn-primary w-100"
-														onClick={() => actions.jwtToken(this.state.email)}>
+														onClick={() =>
+															actions.jwtToken(this.state.email, this.state.password)
+														}>
 														Login
 													</button>
 												</Link>
