@@ -11,7 +11,10 @@ import "../../styles/modallog.scss";
 export class Modal extends React.Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			email: "",
+			password: ""
+		};
 	}
 
 	render() {
@@ -49,12 +52,18 @@ export class Modal extends React.Component {
 											/>
 										</div>
 										<Form>
-											<Form.Group as={Row} controlId="formHorizontalEmail">
+											<Form.Group as={Row} controlId="formHorizontalEmail" id="email">
 												<Form.Label column sm={2}>
 													Email
 												</Form.Label>
 												<Col sm={10}>
-													<Form.Control type="email" placeholder="Email" />
+													<Form.Control
+														type="email"
+														placeholder="Email"
+														onChange={e => this.setState({ email: e.target.value })}
+														value={this.state.email}
+														id="email"
+													/>
 												</Col>
 											</Form.Group>
 
@@ -68,7 +77,10 @@ export class Modal extends React.Component {
 											</Form.Group>
 											<div>
 												<Link to="/demo">
-													<button type="button" className="btn btn-primary w-100">
+													<button
+														type="button"
+														className="btn btn-primary w-100"
+														onClick={() => actions.jwtToken(this.state.email)}>
 														Login
 													</button>
 												</Link>

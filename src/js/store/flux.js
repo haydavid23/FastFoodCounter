@@ -14,6 +14,7 @@ const getState = ({ getStore, setStore }) => {
 			selected: [],
 			foodCatalog: [],
 			selectedFoods: [],
+			jwtToken: [],
 
 			day: new Date(),
 			previousDay: "",
@@ -34,6 +35,31 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
+			jwtToken: email => {
+				console.log(email);
+			},
+			// jwtToken: () => {
+			// 	fetch(" https://3000-c387acf4-5ed4-4110-be00-0948c845e5c8.ws-us0.gitpod.io/login", {
+			// 		method: "POST",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 		},
+			// 		body: JSON.stringify({
+			// 			username: store.tableContent,
+			// 			password: "US/Eastern"
+			// 		})
+			// 	})
+			// 		.then(response => response.json())
+
+			// 		.then(res => {
+			// 			let foodCatalog = store.foodCatalog.concat(res.foods);
+			// 			setStore({
+			// 				foodCatalog: foodCatalog,
+			// 				selectedFoods: foodCatalog
+			// 			});
+			// 		});
+			// },
+
 			qtySelected: (qty, index) => {
 				const store = getStore();
 				console.log("Store: ", store);
