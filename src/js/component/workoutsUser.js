@@ -4,7 +4,7 @@ import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 
-export class Workouts extends React.Component {
+export class WorkoutsUser extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 
@@ -28,13 +28,15 @@ export class Workouts extends React.Component {
 					<div id="example-collapse-text">
 						<ListGroup variant="flush">
 							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
+								300 sit-ups
+								<Form.Check type="checkbox" className="d-inline" />
 							</ListGroup.Item>
 							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
+								15 min run
+								<Form.Check type="checkbox" className="d-inline" />
 							</ListGroup.Item>
 							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
+								500 push-ups <Form.Check type="checkbox" className="d-inline" />
 							</ListGroup.Item>
 						</ListGroup>
 					</div>

@@ -35,11 +35,11 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			jwtToken: (email, password) => {
+			jwtToken: (email, password, demo) => {
 				console.log(email);
 				console.log(password);
 
-				fetch(" https://3000-c387acf4-5ed4-4110-be00-0948c845e5c8.ws-us0.gitpod.io/login", {
+				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"

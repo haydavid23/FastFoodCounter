@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Workouts } from "../component/workouts.js";
+import { WorkoutsUser } from "../component/workoutsUser.js";
 import { Context } from "../store/appContext.js";
 
 export class Tableuser extends React.Component {
@@ -77,7 +77,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row">
-														<Workouts />
+														<WorkoutsUser />
 													</td>
 													<td scope="row" className="text-center">
 														{"500"}
