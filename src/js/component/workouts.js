@@ -27,14 +27,8 @@ export class Workouts extends React.Component {
 				<Collapse in={this.state.open}>
 					<div id="example-collapse-text">
 						<ListGroup variant="flush">
-							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
-							</ListGroup.Item>
-							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
-							</ListGroup.Item>
-							<ListGroup.Item variant="dark">
-								Please Login <Form.Check type="checkbox" className="d-inline" />
+							<ListGroup.Item variant="dark" className="text-center">
+								Please Login To See Workouts{" "}
 							</ListGroup.Item>
 						</ListGroup>
 					</div>
