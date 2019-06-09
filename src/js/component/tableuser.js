@@ -13,7 +13,8 @@ export class Tableuser extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			initialValue: 1
+			initialValue: 1,
+			totaCal: ""
 		};
 	}
 
@@ -72,7 +73,16 @@ export class Tableuser extends React.Component {
 														</Form>
 													</td>
 
-													<td scope="row" className="text-center" id="cal">
+													<td
+														scope="row"
+														className="text-center"
+														id="cal"
+														onChange={e =>
+															this.setState({
+																totalCal: e.target.value
+															})
+														}
+														value={this.state.totalCal}>
 														{item.nf_calories * item.serving_qty}
 													</td>
 

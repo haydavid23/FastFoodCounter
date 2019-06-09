@@ -52,21 +52,21 @@ export class Home extends React.Component {
 								<Carousel>
 									<Carousel.Item>
 										<img
-											className="d-block w-100"
+											className="d-block w-75 mx-auto"
 											src="http://fitbydesigncoppell.com/wp-content/uploads/2014/05/burpee_fries_post.jpg"
 											alt="First slide"
 										/>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-100 border border-dark"
+											className="d-block  w-75 mx-auto border border-dark"
 											src="https://i.pinimg.com/originals/5d/77/ad/5d77adca05eb2ad971f559b2fafd2fea.jpg"
 											alt="Third slide"
 										/>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-100"
+											className="d-block  w-75 mx-auto"
 											src="https://www.unilad.co.uk/wp-content/uploads/2016/03/Screen-Shot-2016-03-04-at-17.26.35.png"
 											alt="Third slide"
 										/>
