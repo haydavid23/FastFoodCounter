@@ -2,6 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Context } from "../store/appContext.js";
+import "../../styles/home.scss";
 
 export class Select extends React.Component {
 	render() {
@@ -12,7 +13,7 @@ export class Select extends React.Component {
 						return (
 							<Form className="text-center">
 								<Form.Group controlId="exampleForm.ControlSelect1">
-									<Form.Label>Pick a Fast Food Chain</Form.Label>{" "}
+									<Form.Label id="sub">Pick a Fast Food Chain</Form.Label>{" "}
 									<Form.Control
 										as="select"
 										id="drop"

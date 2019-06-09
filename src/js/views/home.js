@@ -46,7 +46,7 @@ export class Home extends React.Component {
 								<ul style={{ listStyleType: "none" }} className="text-center text-bold" id="sub">
 									<li>Get customized workouts for your fast food meals </li>
 									<li>Keep track of your fast food calorie intake </li>
-									<li>All the major fast food chai ns included!!!</li>
+									<li>All the major fast food chains included!!!</li>
 								</ul>
 
 								<Carousel>
@@ -59,14 +59,14 @@ export class Home extends React.Component {
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-100 border border-dark mx-auto"
+											className="d-block w-100 border border-dark"
 											src="https://i.pinimg.com/originals/5d/77/ad/5d77adca05eb2ad971f559b2fafd2fea.jpg"
 											alt="Third slide"
 										/>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-100 mx-auto"
+											className="d-block w-100"
 											src="https://www.unilad.co.uk/wp-content/uploads/2016/03/Screen-Shot-2016-03-04-at-17.26.35.png"
 											alt="Third slide"
 										/>
