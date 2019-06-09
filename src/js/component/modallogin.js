@@ -13,7 +13,7 @@ export class Modal extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			email: "",
+			username: "",
 			password: ""
 		};
 	}
@@ -53,17 +53,16 @@ export class Modal extends React.Component {
 											/>
 										</div>
 										<Form>
-											<Form.Group as={Row} controlId="formHorizontalEmail" id="email">
+											<Form.Group as={Row} controlId="formHorizontalEmail">
 												<Form.Label column sm={2}>
-													Email
+													Username
 												</Form.Label>
 												<Col sm={10}>
 													<Form.Control
-														type="email"
-														placeholder="Email"
-														onChange={e => this.setState({ email: e.target.value })}
-														value={this.state.email}
-														id="email"
+														type="text"
+														placeholder="Username"
+														onChange={e => this.setState({ username: e.target.value })}
+														value={this.state.username}
 													/>
 												</Col>
 											</Form.Group>
@@ -78,7 +77,6 @@ export class Modal extends React.Component {
 														placeholder="Password"
 														onChange={e => this.setState({ password: e.target.value })}
 														value={this.state.password}
-														id="password"
 													/>
 												</Col>
 											</Form.Group>
@@ -88,7 +86,7 @@ export class Modal extends React.Component {
 														type="button"
 														className="btn btn-primary w-100"
 														onClick={() =>
-															actions.jwtToken(this.state.email, this.state.password)
+															actions.jwtToken(this.state.username, this.state.password)
 														}>
 														Login
 													</button>

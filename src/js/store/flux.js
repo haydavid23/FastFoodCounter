@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import injectContext from "../store/appContext.js";
 import Form from "react-bootstrap/FormGroup";
+import { StaticRouter } from "react-router";
 
 const getState = ({ getStore, setStore }) => {
 	return {
@@ -35,17 +36,38 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			jwtToken: (email, password, demo) => {
-				console.log(email);
-				console.log(password);
+			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
+				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person", {
+					method: "POST",
+					mode: "no-cors",
 
+					headers: {
+						"Content-Type": "application/json"
+					},
+
+					body: JSON.stringify({
+						name: name,
+						last_name: last_name,
+						email: email,
+						password: password,
+						address: address,
+						city: city,
+						state: state,
+						zip_code: zip_code,
+						username: username
+					})
+				});
+			},
+
+			jwtToken: (username, password) => {
 				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/login", {
 					method: "POST",
+
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						email: email,
+						username: username,
 						password: password
 					})
 				})
@@ -92,6 +114,7 @@ const getState = ({ getStore, setStore }) => {
 						let common = data.common.map((item, index) => {
 							return item.food_name;
 						});
+
 						setStore({ common: common });
 					});
 
