@@ -16,7 +16,6 @@ const getState = ({ getStore, setStore }) => {
 			foodCatalog: [],
 			selectedFoods: [],
 			jwtToken: [],
-
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -167,9 +166,9 @@ const getState = ({ getStore, setStore }) => {
 				clear;
 			},
 
-			delButton: id => {
+			delButton: index => {
 				const store = getStore();
-				store.selectedFoods.splice(id, 1);
+				store.selectedFoods.splice(index, 1);
 				setStore({ store: store });
 			}
 		}

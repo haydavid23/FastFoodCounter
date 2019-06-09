@@ -12,10 +12,7 @@ import { Context } from "../store/appContext.js";
 export class Tableuser extends React.Component {
 	constructor() {
 		super();
-		this.state = {
-			initialValue: 1,
-			totaCal: ""
-		};
+		this.state = {};
 	}
 
 	render() {
@@ -62,7 +59,6 @@ export class Tableuser extends React.Component {
 																	name="qty"
 																	as="select"
 																	onChange={e =>
-																		console.log(e.target.value) ||
 																		actions.qtySelected(e.target.value, index)
 																	}>
 																	<option value="1">1</option>
@@ -73,16 +69,7 @@ export class Tableuser extends React.Component {
 														</Form>
 													</td>
 
-													<td
-														scope="row"
-														className="text-center"
-														id="cal"
-														onChange={e =>
-															this.setState({
-																totalCal: e.target.value
-															})
-														}
-														value={this.state.totalCal}>
+													<td scope="row" className="text-center" id="cal">
 														{item.nf_calories * item.serving_qty}
 													</td>
 

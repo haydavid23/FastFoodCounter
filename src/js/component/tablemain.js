@@ -58,7 +58,6 @@ export class Tablemain extends React.Component {
 																	name="qty"
 																	as="select"
 																	onChange={e =>
-																		console.log(e.target.value) ||
 																		actions.qtySelected(e.target.value, index)
 																	}>
 																	<option value="1">1</option>
@@ -81,7 +80,7 @@ export class Tablemain extends React.Component {
 														<i
 															id="x"
 															className="fas fa-times fa-2x float-right"
-															onClick={() => actions.delButton()}
+															onClick={() => actions.delButton(index)}
 														/>
 													</td>
 												</tr>
