@@ -42,6 +42,13 @@ export class Home extends React.Component {
 								/>
 
 								<h1> FAST FOOD COUNTER </h1>
+
+								<ul style={{ listStyleType: "none" }} className="text-center text-bold" id="sub">
+									<li>Get customized workouts for your fast food meals </li>
+									<li>Keep track of your fast food calorie intake </li>
+									<li>All the major fast food chai ns included!!!</li>
+								</ul>
+
 								<Carousel>
 									<Carousel.Item>
 										<img
@@ -49,31 +56,20 @@ export class Home extends React.Component {
 											src="http://fitbydesigncoppell.com/wp-content/uploads/2014/05/burpee_fries_post.jpg"
 											alt="First slide"
 										/>
-										<Carousel.Caption>
-											<h3>Customized workouts to counter your fast food meals</h3>
-										</Carousel.Caption>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-90"
+											className="d-block w-auto border border-dark mx-auto"
 											src="https://i.pinimg.com/originals/5d/77/ad/5d77adca05eb2ad971f559b2fafd2fea.jpg"
 											alt="Third slide"
 										/>
-
-										<Carousel.Caption>
-											<h3>All the major fast food chains include</h3>
-										</Carousel.Caption>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
-											className="d-block w-90"
+											className="d-block w-auto mx-auto"
 											src="https://www.unilad.co.uk/wp-content/uploads/2016/03/Screen-Shot-2016-03-04-at-17.26.35.png"
 											alt="Third slide"
 										/>
-
-										<Carousel.Caption>
-											<h3>Keep track of your fast food calorie intake</h3>
-										</Carousel.Caption>
 									</Carousel.Item>
 								</Carousel>
 								<div className="jumbotron bg-danger p-3">

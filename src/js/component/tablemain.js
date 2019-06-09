@@ -77,7 +77,7 @@ export class Tablemain extends React.Component {
 														<Workouts />
 													</td>
 													<td scope="row" className="text-center">
-														{"500"}
+														{"Login to see calories burned"}
 														<i
 															id="x"
 															className="fas fa-times fa-2x float-right"

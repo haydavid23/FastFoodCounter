@@ -46,6 +46,21 @@ h1{
         4px 4px 0 rgb(190, 59, 59);
 }
 
+#sub{
+
+    font-size: 35px;
+    // margin-bottom: 50px;
+    color: black !important;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue
+    // text-shadow:
+    //     -10px -10px 0 rgb(190, 59, 59),
+    //     4px -4px 0 rgb(190, 59, 59),
+    //     -4px 4px 0 rgb(190, 59, 59),
+    //     4px 4px 0 rgb(190, 59, 59);
+
+
+}
+
 .search{
     border:solid;
 
