@@ -158,7 +158,7 @@ const getState = ({ getStore, setStore }) => {
 						let foodCatalog = store.foodCatalog.concat(res.foods);
 						setStore({
 							foodCatalog: foodCatalog,
-							selectedFoods: foodCatalog
+							selectedFoods: store.selectedFoods.concat(res.foods)
 						});
 					});
 				document.querySelector("#drop").value = "----";
