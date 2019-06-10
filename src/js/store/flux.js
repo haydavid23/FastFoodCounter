@@ -10,6 +10,7 @@ const getState = ({ getStore, setStore }) => {
 			tableContent: "",
 			query: "",
 			calories: "",
+			totalCal: [],
 			common: [],
 			branded: [],
 			selected: [],
@@ -158,7 +159,10 @@ const getState = ({ getStore, setStore }) => {
 						let foodCatalog = store.foodCatalog.concat(res.foods);
 						setStore({
 							foodCatalog: foodCatalog,
-							selectedFoods: store.selectedFoods.concat(res.foods)
+							selectedFoods: store.selectedFoods.concat(res.foods),
+							totalCal: store.selectedFoods.map((item, index) => {
+								return item.nf_calories;
+							})
 						});
 					});
 				document.querySelector("#drop").value = "----";
