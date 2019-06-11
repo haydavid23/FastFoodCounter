@@ -82,7 +82,7 @@ export class Demo extends React.Component {
 										variant="danger"
 										now={store.totalCal}
 										key={1}
-										label={"Total Calories Intake"}
+										label={"Total Cal Intake: " + store.totalCal}
 									/>
 									<ProgressBar variant="warning" now={700} key={2} label={"Left Over Calories"} />
 									<ProgressBar
