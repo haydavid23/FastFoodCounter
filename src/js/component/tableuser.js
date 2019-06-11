@@ -81,7 +81,7 @@ export class Tableuser extends React.Component {
 														<i
 															id="x"
 															className="fas fa-times fa-2x float-right"
-															onClick={() => actions.delButton(index)}
+															onClick={() => actions.delButton(index, item)}
 														/>
 													</td>
 												</tr>

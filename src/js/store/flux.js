@@ -89,7 +89,7 @@ const getState = ({ getStore, setStore }) => {
 					selectedFoods: store.selectedFoods.map((f, i) => {
 						if (i == index) {
 							let food = Object.assign({}, f);
-							// food.serving_qty = newqty;
+
 							food.nf_calories = newqty * store.foodCatalog[index].nf_calories;
 							return food;
 						}
@@ -100,14 +100,7 @@ const getState = ({ getStore, setStore }) => {
 				setStore({
 					totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
 				});
-
-				// action.updateProgressBar();
 			},
-
-			// updateProgressBar: (qty, index) => {
-			// 	const store = getStore();
-			// 	store.selectedFoods.reduce(({ a, nf_calories }) => a + nf_calories, 0);
-			// },
 
 			selection: select => {
 				const store = getStore();
@@ -187,10 +180,15 @@ const getState = ({ getStore, setStore }) => {
 				clear;
 			},
 
-			delButton: index => {
+			delButton: (index, item) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
-				setStore({ store: store });
+				let newTotal = store.totalCal - item.nf_calories;
+
+				setStore({
+					store: store,
+					totalCal: newTotal
+				});
 			}
 		}
 	};
