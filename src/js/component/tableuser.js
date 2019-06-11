@@ -58,9 +58,9 @@ export class Tableuser extends React.Component {
 																<Form.Control
 																	name="qty"
 																	as="select"
-																	onChange={e =>
-																		actions.qtySelected(e.target.value, index)
-																	}>
+																	onChange={e => {
+																		actions.qtySelected(e.target.value, index);
+																	}}>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>

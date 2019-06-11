@@ -89,13 +89,25 @@ const getState = ({ getStore, setStore }) => {
 					selectedFoods: store.selectedFoods.map((f, i) => {
 						if (i == index) {
 							let food = Object.assign({}, f);
-							food.serving_qty = newqty;
+							// food.serving_qty = newqty;
+							food.nf_calories = newqty * store.foodCatalog[index].nf_calories;
 							return food;
 						}
 						return f;
 					})
 				});
+
+				setStore({
+					totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
+				});
+
+				// action.updateProgressBar();
 			},
+
+			// updateProgressBar: (qty, index) => {
+			// 	const store = getStore();
+			// 	store.selectedFoods.reduce(({ a, nf_calories }) => a + nf_calories, 0);
+			// },
 
 			selection: select => {
 				const store = getStore();
@@ -159,11 +171,16 @@ const getState = ({ getStore, setStore }) => {
 						let foodCatalog = store.foodCatalog.concat(res.foods);
 						setStore({
 							foodCatalog: foodCatalog,
-							selectedFoods: store.selectedFoods.concat(res.foods),
-							totalCal: store.selectedFoods.map((item, index) => {
-								return item.nf_calories;
-							})
+							selectedFoods: store.selectedFoods.concat(res.foods)
 						});
+
+						setStore({
+							totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
+						});
+
+						// const totalCal = store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0);
+						// console.log("Total Cal:", totalCal);
+						// setStore({ totalCal });
 					});
 				document.querySelector("#drop").value = "----";
 

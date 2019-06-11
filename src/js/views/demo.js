@@ -80,7 +80,7 @@ export class Demo extends React.Component {
 									<ProgressBar
 										className="mw-100"
 										variant="danger"
-										now={1000}
+										now={store.totalCal}
 										key={1}
 										label={"Total Calories Intake"}
 									/>
