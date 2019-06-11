@@ -7,6 +7,7 @@ import { StaticRouter } from "react-router";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			newUser: [],
 			tableContent: "",
 			query: "",
 			calories: "",
@@ -37,6 +38,7 @@ const getState = ({ getStore, setStore }) => {
 
 		actions: {
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
+				const store = getStore();
 				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person", {
 					method: "POST",
 					mode: "no-cors",
@@ -57,6 +59,7 @@ const getState = ({ getStore, setStore }) => {
 						username: username
 					})
 				});
+				setStore({ store });
 			},
 
 			jwtToken: (username, password) => {
@@ -188,6 +191,15 @@ const getState = ({ getStore, setStore }) => {
 				setStore({
 					store: store,
 					totalCal: newTotal
+				});
+			},
+
+			delButton2: (index, item) => {
+				const store = getStore();
+				store.selectedFoods.splice(index, 1);
+
+				setStore({
+					store: store
 				});
 			}
 		}

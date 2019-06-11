@@ -21,22 +21,16 @@ const injectContext = PassedComponent => {
 			});
 		}
 
-		// componentDidMount() {
-		// 	fetch("https://trackapi.nutritionix.com/v2/search/instant?query=burger king", {
-		// 		headers: {
-		// 			"x-app-key": "2865a994886d0e258357d55037e33f3b",
-		// 			"x-remote-user-id": "0",
-		// 			"x-app-id": "da0a3819"
-		// 		}
-		// 	})
-		// 		.then(response => response.json())
+		componentDidMount() {
+			fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person")
+				.then(response => response.json())
 
-		// 		.then(data => {
-		// 			let { store } = this.state;
-		// 			store.food = data;
-		// 			this.setState({ store });
-		// 		});
-		// }
+				.then(data => {
+					let { store } = this.state;
+					store.newUser = data;
+					this.setState({ store });
+				});
+		}
 
 		render() {
 			return (
