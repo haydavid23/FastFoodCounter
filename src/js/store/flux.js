@@ -193,6 +193,7 @@ const getState = ({ getStore, setStore }) => {
 			delButton: (index, item) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
+				store.foodCatalog.splice(index, 1);
 				let newTotal = store.totalCal - item.nf_calories;
 
 				setStore({
@@ -205,6 +206,7 @@ const getState = ({ getStore, setStore }) => {
 			delButton2: (index, item) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
+				store.foodCatalog.splice(index, 1);
 
 				setStore({
 					store: store

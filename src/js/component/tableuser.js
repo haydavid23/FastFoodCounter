@@ -46,10 +46,6 @@ export class Tableuser extends React.Component {
 
 									<tbody>
 										{store.selectedFoods.map((item, index) => {
-											if (item.serving_qty > 1) {
-												item.serving_qty = 1;
-											}
-
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
