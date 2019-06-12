@@ -197,8 +197,9 @@ const getState = ({ getStore, setStore }) => {
 				let newTotal = store.totalCal - item.nf_calories;
 
 				setStore({
-					store: store,
+					// store: store,
 					totalCal: newTotal,
+					selectedFoods: store.selectedFoods.splice(index, 1),
 					caloriesBurned: 0
 				});
 			},
