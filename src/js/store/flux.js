@@ -38,8 +38,9 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			workouts: (checked, cal) => {
+			workouts: (checked, cal, index) => {
 				const store = getStore();
+
 				if (checked == true) {
 					setStore({ caloriesBurned: cal + store.caloriesBurned });
 				} else if (checked == false) {

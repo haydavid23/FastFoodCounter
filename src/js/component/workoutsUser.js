@@ -4,6 +4,7 @@ import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import { Context } from "../store/appContext.js";
+import PropTypes from "prop-types";
 
 export class WorkoutsUser extends React.Component {
 	constructor(props, context) {
@@ -37,7 +38,9 @@ export class WorkoutsUser extends React.Component {
 												type="checkbox"
 												className="d-inline"
 												id="situps"
-												onChange={e => actions.workouts(e.target.checked, 300)}
+												onChange={e =>
+													actions.workouts(e.target.checked, 300, this.props.index)
+												}
 											/>
 										</ListGroup.Item>
 										<ListGroup.Item variant="dark">
@@ -45,7 +48,9 @@ export class WorkoutsUser extends React.Component {
 											<Form.Check
 												type="checkbox"
 												className="d-inline"
-												onChange={e => actions.workouts(e.target.checked, 600)}
+												onChange={e =>
+													actions.workouts(e.target.checked, 600, this.props.index)
+												}
 											/>
 										</ListGroup.Item>
 										<ListGroup.Item variant="dark">
@@ -53,7 +58,9 @@ export class WorkoutsUser extends React.Component {
 											<Form.Check
 												type="checkbox"
 												className="d-inline"
-												onChange={e => actions.workouts(e.target.checked, 500)}
+												onChange={e =>
+													actions.workouts(e.target.checked, 500, this.props.index)
+												}
 											/>
 										</ListGroup.Item>
 									</ListGroup>
@@ -66,3 +73,6 @@ export class WorkoutsUser extends React.Component {
 		);
 	}
 }
+WorkoutsUser.propTypes = {
+	index: PropTypes.number
+};

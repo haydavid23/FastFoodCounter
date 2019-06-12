@@ -42,12 +42,13 @@ export class Home extends React.Component {
 								/>
 
 								<h1> FAST FOOD COUNTER </h1>
-
-								<ul style={{ listStyleType: "none" }} className="text-center text-bold" id="sub">
-									<li>Get customized workouts for your fast food meals </li>
-									<li>Keep track of your fast food calorie intake </li>
-									<li>All the major fast food chains included!!!</li>
-								</ul>
+								<div id="ol">
+									<ol style={{ listStyleType: "none" }} className="text-center text-bold" id="sub">
+										<li>Get customized workouts for your fast food meals </li>
+										<li>Keep track of your fast food calorie intake </li>
+										<li>All the major fast food chains included!!!</li>
+									</ol>
+								</div>
 
 								<Carousel>
 									<Carousel.Item>
