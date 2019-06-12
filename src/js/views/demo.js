@@ -84,13 +84,18 @@ export class Demo extends React.Component {
 										key={1}
 										label={"Total Cal Intake: " + store.totalCal}
 									/>
-									<ProgressBar variant="warning" now={700} key={2} label={"Left Over Calories"} />
+									<ProgressBar
+										variant="warning"
+										now={store.totalCal - store.caloriesBurned}
+										key={2}
+										label={store.totalCal - store.caloriesBurned}
+									/>
 									<ProgressBar
 										className="mw-100"
 										variant="success"
-										now={300}
+										now={store.caloriesBurned}
 										key={3}
-										label={"Total Calories Burned"}
+										label={"Total Calories Burned: " + store.caloriesBurned}
 									/>
 								</ProgressBar>
 								;
