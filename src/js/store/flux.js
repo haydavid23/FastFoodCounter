@@ -37,6 +37,11 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
+			// workouts: ()=> {
+			//      if (document.querySelector("#situps").checked) {
+			// console.log("hello")
+			// },
+
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
 				const store = getStore();
 				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person", {

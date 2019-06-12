@@ -29,7 +29,12 @@ export class WorkoutsUser extends React.Component {
 						<ListGroup variant="flush">
 							<ListGroup.Item variant="dark">
 								300 sit-ups
-								<Form.Check type="checkbox" className="d-inline" />
+								<Form.Check
+									type="checkbox"
+									className="d-inline"
+									id="situps"
+									onChange={e => console.log(e.target.checked)}
+								/>
 							</ListGroup.Item>
 							<ListGroup.Item variant="dark">
 								15 min run
