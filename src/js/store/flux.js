@@ -7,6 +7,7 @@ import { StaticRouter } from "react-router";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			caloriesBurned: 0,
 			newUser: [],
 			tableContent: "",
 			query: "",
@@ -37,10 +38,14 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			// workouts: ()=> {
-			//      if (document.querySelector("#situps").checked) {
-			// console.log("hello")
-			// },
+			workouts: (checked, cal) => {
+				const store = getStore();
+				if (checked == true) {
+					setStore({ caloriesBurned: cal + store.caloriesBurned });
+				} else if (checked == false) {
+					setStore({ caloriesBurned: store.caloriesBurned - cal });
+				}
+			},
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
 				const store = getStore();
@@ -178,10 +183,6 @@ const getState = ({ getStore, setStore }) => {
 						setStore({
 							totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
 						});
-
-						// const totalCal = store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0);
-						// console.log("Total Cal:", totalCal);
-						// setStore({ totalCal });
 					});
 				document.querySelector("#drop").value = "----";
 
@@ -195,7 +196,8 @@ const getState = ({ getStore, setStore }) => {
 
 				setStore({
 					store: store,
-					totalCal: newTotal
+					totalCal: newTotal,
+					caloriesBurned: 0
 				});
 			},
 
