@@ -202,15 +202,17 @@ const getState = ({ getStore, setStore }) => {
 					totalCal: newTotal,
 					caloriesBurned: 0
 				});
+			},
+
+			delButton2: (index, item) => {
+				const store = getStore();
+				store.selectedFoods.splice(index, 1);
+				store.foodCatalog.splice(index, 1);
+
+				setStore({
+					store: store
+				});
 			}
-
-			// delButton2: (index, item) => {
-			// 	const store = getStore();
-
-			// 	setStore({
-			// 		selectedFoods: store.selectedFoods.splice(index, 1)
-			// 	});
-			// }
 		}
 	};
 };
