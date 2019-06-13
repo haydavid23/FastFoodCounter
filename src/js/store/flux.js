@@ -38,9 +38,8 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			workouts: (checked, cal, index) => {
+			workouts: (checked, cal) => {
 				const store = getStore();
-
 				if (checked == true) {
 					setStore({ caloriesBurned: cal + store.caloriesBurned });
 				} else if (checked == false) {
@@ -176,9 +175,10 @@ const getState = ({ getStore, setStore }) => {
 
 					.then(res => {
 						let foodCatalog = store.foodCatalog.concat(res.foods);
+						let selectedFoods = store.selectedFoods.concat(res.foods);
 						setStore({
 							foodCatalog: foodCatalog,
-							selectedFoods: store.selectedFoods.concat(res.foods)
+							selectedFoods: selectedFoods
 						});
 
 						setStore({
@@ -190,29 +190,27 @@ const getState = ({ getStore, setStore }) => {
 				clear;
 			},
 
-			delButton: (index, item) => {
+			delButton: (item, index) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
 				store.foodCatalog.splice(index, 1);
+
 				let newTotal = store.totalCal - item.nf_calories;
 
 				setStore({
-					// store: store,
+					store: store,
 					totalCal: newTotal,
-					selectedFoods: store.selectedFoods.splice(index, 1),
 					caloriesBurned: 0
 				});
-			},
-
-			delButton2: (index, item) => {
-				const store = getStore();
-				store.selectedFoods.splice(index, 1);
-				store.foodCatalog.splice(index, 1);
-
-				setStore({
-					store: store
-				});
 			}
+
+			// delButton2: (index, item) => {
+			// 	const store = getStore();
+
+			// 	setStore({
+			// 		selectedFoods: store.selectedFoods.splice(index, 1)
+			// 	});
+			// }
 		}
 	};
 };

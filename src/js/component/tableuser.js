@@ -46,6 +46,7 @@ export class Tableuser extends React.Component {
 
 									<tbody>
 										{store.selectedFoods.map((item, index) => {
+											console.log(item);
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
@@ -69,18 +70,18 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item.serving_qty * item.nf_calories}
+														{item.nf_calories * item.serving_qty}
 													</td>
 
 													<td scope="row">
-														<WorkoutsUser index={index} />
+														<WorkoutsUser />
 													</td>
 													<td scope="row" className="text-center">
 														{store.caloriesBurned}
 														<i
 															id="x"
 															className="fas fa-times fa-2x float-right"
-															onClick={() => actions.delButton(index, item)}
+															onClick={() => actions.delButton(item, index)}
 														/>
 													</td>
 												</tr>
