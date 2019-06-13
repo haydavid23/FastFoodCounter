@@ -42,7 +42,7 @@ export class Home extends React.Component {
 								/>
 
 								<h1> FAST FOOD COUNTER </h1>
-								<div id="ol">
+								<div id="ol" className="mb-3">
 									<ol style={{ listStyleType: "none" }} className="text-center text-bold" id="sub">
 										<li>Get customized workouts for your fast food meals </li>
 										<li>Keep track of your fast food calorie intake </li>
