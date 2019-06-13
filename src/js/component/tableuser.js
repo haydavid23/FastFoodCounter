@@ -70,7 +70,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row" className="text-center" id="cal">
-														{item.nf_calories * item.serving_qty}
+														{item.nf_calories}
 													</td>
 
 													<td scope="row">

@@ -96,7 +96,7 @@ const getState = ({ getStore, setStore }) => {
 			qtySelected: (qty, index) => {
 				const store = getStore();
 				console.log("Store: ", store);
-				let newqty = store.foodCatalog[index].serving_qty * qty;
+				let newqty = qty;
 
 				setStore({
 					selectedFoods: store.selectedFoods.map((f, i) => {
