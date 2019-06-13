@@ -204,13 +204,14 @@ const getState = ({ getStore, setStore }) => {
 				});
 			},
 
-			delButton2: (index, item) => {
+			delButton2: (item, index) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
 				store.foodCatalog.splice(index, 1);
 
 				setStore({
-					store: store
+					store: store,
+					totalCal: store.totalCal - item.nf_calories
 				});
 			}
 		}
