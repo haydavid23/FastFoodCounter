@@ -74,7 +74,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td scope="row">
-														<WorkoutsUser />
+														<WorkoutsUser index={index} />
 													</td>
 													<td scope="row" className="text-center">
 														{store.caloriesBurned}

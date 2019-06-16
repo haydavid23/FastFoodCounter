@@ -38,13 +38,28 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
-			workouts: (checked, cal) => {
+			workouts: (checked, cal, index) => {
 				const store = getStore();
+				console.log(index);
 				if (checked == true) {
-					setStore({ caloriesBurned: cal + store.caloriesBurned });
-				} else if (checked == false) {
-					setStore({ caloriesBurned: store.caloriesBurned - cal });
+					setStore({
+						selectedFoods: store.selectedFoods.map((f, i) => {
+							if (i == index) {
+								let food = Object.assign({}, f);
+								food.burned = [];
+								// food.burned.push(cal);
+
+								return food;
+							}
+							return f;
+						})
+					});
 				}
+				// if (checked == true) {
+				// 	setStore({ caloriesBurned: cal + store.caloriesBurned });
+				// } else if (checked == false) {
+				// 	setStore({ caloriesBurned: store.caloriesBurned - cal });
+				// }
 			},
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
