@@ -7,6 +7,8 @@ import { StaticRouter } from "react-router";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			tableIndex: "",
+			workoutIndex: "",
 			caloriesBurned: 0,
 			newUser: [],
 			tableContent: "",
@@ -42,11 +44,31 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				console.log(index);
 
-				if (checked == true) {
-					setStore({ caloriesBurned: cal + store.caloriesBurned });
+				if (checked === true) {
+					setStore({
+						selectedFoods: store.selectedFoods.map((f, i) => {
+							if (i == index) {
+								let food = Object.assign({}, f);
+
+								food.burned = cal;
+
+								return food;
+							}
+							return f;
+						})
+					});
 				} else if (checked == false) {
 					setStore({ caloriesBurned: store.caloriesBurned - cal });
 				}
+
+				// if (checked == true) {
+				// 	setStore({
+				// 		caloriesBurned: cal + store.caloriesBurned,
+				// 		workoutIndex: index
+				// 	});
+				// } else if (checked == false) {
+				// 	setStore({ caloriesBurned: store.caloriesBurned - cal });
+				// }
 			},
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
@@ -180,7 +202,15 @@ const getState = ({ getStore, setStore }) => {
 						let selectedFoods = store.selectedFoods.concat(res.foods);
 						setStore({
 							foodCatalog: foodCatalog,
-							selectedFoods: selectedFoods
+							selectedFoods: selectedFoods.map((f, i) => {
+								if (i === store.workoutIndex) {
+									let food = Object.assign({}, f);
+
+									food.burned = [];
+									return food;
+								}
+								return f;
+							})
 						});
 
 						setStore({
