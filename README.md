@@ -1,20 +1,30 @@
-# WebApp boilerplate with React and Cloud 9
+# Purpose
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
-### Requirements:
-- Make sure you are using node version 8
+A fun and interactive web platform containing the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating and to promote an active lifestyle incoporating "gymless" workout routine.
 
-##### Install the packages:
-```
-$ npm install
-```
 
-## Start coding!
 
-Start the webpack server with live reload:
-- `$ npm run start` for windows, mac, linux or Gitpod.
-- `$ npm run c9` for Cloud 9 Users.
+### Technologies used:
+- React js, Bootstrap, CSS, APIs, Python, Flask.
+
+##### Cool Features:
+
+Customized workout routine for each meal consumed.
+Ability for the user to check-off completed workouts to burn calories.
+Progress Bar that displays total calories consumed vs total calories burned.
+
+
+## Future Additions
+
+Monthly and Weekly views to help user track caloric consumption and workouts completed.
+GIF link of each exercise to help user complete the exercise shown.
+Show picture of meal seached on the typeahead.
+Provide a healthier option for meals consumed.
+
+
+
+
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
