@@ -44,13 +44,14 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				console.log(index);
 
-				if (checked === true) {
+				if (checked == true) {
 					setStore({
+						workoutIndex: index,
 						selectedFoods: store.selectedFoods.map((f, i) => {
 							if (i == index) {
 								let food = Object.assign({}, f);
 
-								food.burned = cal;
+								food.burned = cal + food.burned;
 
 								return food;
 							}
@@ -124,7 +125,7 @@ const getState = ({ getStore, setStore }) => {
 
 				setStore({
 					selectedFoods: store.selectedFoods.map((f, i) => {
-						if (i == index) {
+						if (i === index) {
 							let food = Object.assign({}, f);
 
 							food.nf_calories = newqty * store.foodCatalog[index].nf_calories;
@@ -203,12 +204,13 @@ const getState = ({ getStore, setStore }) => {
 						setStore({
 							foodCatalog: foodCatalog,
 							selectedFoods: selectedFoods.map((f, i) => {
-								if (i === store.workoutIndex) {
+								if (i !== store.workoutIndex) {
 									let food = Object.assign({}, f);
 
-									food.burned = [];
+									food.burned = 0;
 									return food;
 								}
+
 								return f;
 							})
 						});

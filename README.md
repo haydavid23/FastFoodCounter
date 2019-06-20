@@ -24,6 +24,7 @@ Provide a healthier option (from the same fast food chain selected) for meals co
 Ability for the use to see previous days information.
 JWT login authentication.
 Create a database (using flask) with more alternative workouts.
+Scan meals consumed using barcode techonology to facilitate user's interactive
 
 
 
