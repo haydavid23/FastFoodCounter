@@ -70,7 +70,12 @@ const getState = ({ getStore, setStore }) => {
 						caloriesBurned:
 							store.selectedFoods.map((f, i) => {
 								return f.burned;
-							}) - cal
+							}) - cal,
+
+						selectedFoods: store.selectedFoods.map((f, i) => {
+							f.burned = f.burned - cal;
+							return f;
+						})
 					});
 				}
 
