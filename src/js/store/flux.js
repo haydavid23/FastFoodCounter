@@ -7,6 +7,7 @@ import { StaticRouter } from "react-router";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			index2: "",
 			tableIndex: "",
 			workoutIndex: "",
 			caloriesBurned: 0,
@@ -43,6 +44,7 @@ const getState = ({ getStore, setStore }) => {
 			workouts: (checked, cal, index) => {
 				const store = getStore();
 				console.log(index);
+				console.log(checked);
 
 				if (checked == true) {
 					setStore({

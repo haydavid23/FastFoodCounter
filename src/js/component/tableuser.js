@@ -12,7 +12,9 @@ import { Context } from "../store/appContext.js";
 export class Tableuser extends React.Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			index: ""
+		};
 	}
 
 	render() {
@@ -46,7 +48,8 @@ export class Tableuser extends React.Component {
 
 									<tbody>
 										{store.selectedFoods.map((item, index) => {
-											console.log(item);
+											store.index2 = index;
+											console.log(store.index2);
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
