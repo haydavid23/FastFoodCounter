@@ -208,9 +208,10 @@ const getState = ({ getStore, setStore }) => {
 							selectedFoods: selectedFoods.map((f, i) => {
 								if (i !== store.workoutIndex) {
 									let food = Object.assign({}, f);
-
-									food.burned = 0;
-									return food;
+									if (!food.burned) {
+										food.burned = 0;
+										return food;
+									}
 								}
 
 								return f;
