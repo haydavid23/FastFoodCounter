@@ -70,17 +70,19 @@ const getState = ({ getStore, setStore }) => {
 							cal
 						)
 					});
-				} else if (checked == false) {
+				}
+				if (checked == false) {
 					setStore({
-						caloriesBurned:
-							store.selectedFoods.map((f, i) => {
-								return f.burned;
-							}) - cal,
+						caloriesBurned: store.selectedFoods.map((f, i) => {
+							return f.burned - cal;
+						}),
 
 						selectedFoods: store.selectedFoods.map((f, i) => {
 							f.burned = f.burned - cal;
 							return f;
-						})
+						}),
+
+						totalCalBurned: store.totalCalBurned - cal
 					});
 				}
 
