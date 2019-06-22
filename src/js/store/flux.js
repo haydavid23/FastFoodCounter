@@ -7,7 +7,7 @@ import { StaticRouter } from "react-router";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			totalCalBurned: 0,
+			totalCalBurned: "",
 			tableIndex: "",
 			workoutIndex: "",
 			caloriesBurned: [],
@@ -65,6 +65,7 @@ const getState = ({ getStore, setStore }) => {
 						caloriesBurned: store.selectedFoods.map((f, i) => {
 							return f.burned;
 						}),
+
 						totalCalBurned: store.caloriesBurned.reduce(
 							(accumulator, currentValue) => accumulator + currentValue,
 							cal
@@ -73,15 +74,22 @@ const getState = ({ getStore, setStore }) => {
 				}
 				if (checked == false) {
 					setStore({
-						caloriesBurned: store.selectedFoods.map((f, i) => {
-							return f.burned - cal;
-						}),
-
 						selectedFoods: store.selectedFoods.map((f, i) => {
-							f.burned = f.burned - cal;
-							return f;
-						}),
+							if (i == index) {
+								let food = Object.assign({}, f);
 
+								food.burned = food.burned - cal;
+
+								return food;
+							}
+							return f;
+						})
+					});
+
+					setStore({
+						caloriesBurned: store.selectedFoods.map((f, i) => {
+							return f.burned;
+						}),
 						totalCalBurned: store.totalCalBurned - cal
 					});
 				}
