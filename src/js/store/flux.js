@@ -41,6 +41,13 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
+			searchBar: () => {
+				const store = getStore();
+				if (store.tableContent == "") {
+					return "Please Choose Meal";
+				}
+			},
+
 			workouts: (checked, cal, index) => {
 				const store = getStore();
 				console.log(index);
@@ -250,6 +257,11 @@ const getState = ({ getStore, setStore }) => {
 					document.querySelector("#drop").value = "----";
 
 					clear;
+
+					setStore({
+						common: [],
+						branded: []
+					});
 				}
 			},
 
