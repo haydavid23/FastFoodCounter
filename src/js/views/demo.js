@@ -93,9 +93,10 @@ export class Demo extends React.Component {
 									<ProgressBar
 										className="mw-100"
 										variant="success"
+										animated={true}
 										now={store.totalCalBurned}
 										key={3}
-										label={"Total Calories Burned: " + store.caloriesBurned}
+										label={"Total Calories Burned: " + store.totalCalBurned}
 									/>
 								</ProgressBar>
 								;

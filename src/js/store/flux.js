@@ -269,13 +269,17 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				store.selectedFoods.splice(index, 1);
 				store.foodCatalog.splice(index, 1);
+				store.caloriesBurned.splice(index, 1);
 
 				let newTotal = store.totalCal - item.nf_calories;
 
 				setStore({
 					store: store,
 					totalCal: newTotal,
-					caloriesBurned: 0
+					totalCalBurned: store.caloriesBurned.reduce(
+						(accumulator, currentValue) => accumulator + currentValue,
+						0
+					)
 				});
 			},
 
