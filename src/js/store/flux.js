@@ -93,15 +93,6 @@ const getState = ({ getStore, setStore }) => {
 						totalCalBurned: store.totalCalBurned - cal
 					});
 				}
-
-				// if (checked == true) {
-				// 	setStore({
-				// 		caloriesBurned: cal + store.caloriesBurned,
-				// 		workoutIndex: index
-				// 	});
-				// } else if (checked == false) {
-				// 	setStore({ caloriesBurned: store.caloriesBurned - cal });
-				// }
 			},
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
@@ -209,52 +200,57 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 
-			addFood: (selected, clear) => {
+			addFood: (selected, clear, value) => {
 				const store = getStore();
+				console.log(value);
 
-				let tablecontent = selected;
-				setStore({ tableContent: tablecontent });
+				if (value == "") {
+					alert("Please Select a Meal");
+				} else {
+					let tablecontent = selected;
+					setStore({ tableContent: tablecontent });
 
-				fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						"x-app-key": "2865a994886d0e258357d55037e33f3b",
-						"x-remote-user-id": "0",
-						"x-app-id": "da0a3819"
-					},
-					body: JSON.stringify({
-						query: store.tableContent,
-						timezone: "US/Eastern"
+					fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"x-app-key": "2865a994886d0e258357d55037e33f3b",
+							"x-remote-user-id": "0",
+							"x-app-id": "da0a3819"
+						},
+						body: JSON.stringify({
+							query: store.tableContent,
+							timezone: "US/Eastern"
+						})
 					})
-				})
-					.then(response => response.json())
+						.then(response => response.json())
 
-					.then(res => {
-						let foodCatalog = store.foodCatalog.concat(res.foods);
-						let selectedFoods = store.selectedFoods.concat(res.foods);
-						setStore({
-							foodCatalog: foodCatalog,
-							selectedFoods: selectedFoods.map((f, i) => {
-								if (i !== store.workoutIndex) {
-									let food = Object.assign({}, f);
-									if (!food.burned) {
-										food.burned = 0;
-										return food;
+						.then(res => {
+							let foodCatalog = store.foodCatalog.concat(res.foods);
+							let selectedFoods = store.selectedFoods.concat(res.foods);
+							setStore({
+								foodCatalog: foodCatalog,
+								selectedFoods: selectedFoods.map((f, i) => {
+									if (i !== store.workoutIndex) {
+										let food = Object.assign({}, f);
+										if (!food.burned) {
+											food.burned = 0;
+											return food;
+										}
 									}
-								}
 
-								return f;
-							})
+									return f;
+								})
+							});
+
+							setStore({
+								totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
+							});
 						});
+					document.querySelector("#drop").value = "----";
 
-						setStore({
-							totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
-						});
-					});
-				document.querySelector("#drop").value = "----";
-
-				clear;
+					clear;
+				}
 			},
 
 			delButton: (item, index) => {

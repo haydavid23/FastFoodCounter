@@ -64,7 +64,11 @@ export class Demo extends React.Component {
 										type="submit"
 										className="d-inline-block"
 										onClick={() =>
-											actions.addFood(this.state.select, this.typeahead.getInstance().clear())
+											actions.addFood(
+												this.state.select,
+												this.typeahead.getInstance().clear(),
+												this.typeahead.getInstance().getInput().value
+											)
 										}>
 										Add Food Item
 									</Button>
@@ -89,7 +93,7 @@ export class Demo extends React.Component {
 									<ProgressBar
 										className="mw-100"
 										variant="success"
-										now={store.caloriesBurned}
+										now={store.totalCalBurned}
 										key={3}
 										label={"Total Calories Burned: " + store.caloriesBurned}
 									/>
