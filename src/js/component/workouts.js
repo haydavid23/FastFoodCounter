@@ -28,7 +28,7 @@ export class Workouts extends React.Component {
 					<div id="example-collapse-text">
 						<ListGroup variant="flush">
 							<ListGroup.Item variant="dark" className="text-center">
-								Please Login To See Workouts{" "}
+								Login To See Workouts{" "}
 							</ListGroup.Item>
 						</ListGroup>
 					</div>
