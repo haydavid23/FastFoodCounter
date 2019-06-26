@@ -12,7 +12,7 @@ A fun and interactive web platform that provides the caloric information of the 
 
 Customized workout routine for each meal consumed.
 Ability for the user to check-off completed workouts to burn calories.
-Progress Bar that displays total calories consumed vs total calories burned.
+Animated progress Bar that displays total calories consumed vs total calories burned.
 
 
 ## Currently working on these additions :
