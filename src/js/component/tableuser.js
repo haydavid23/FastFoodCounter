@@ -53,7 +53,7 @@ export class Tableuser extends React.Component {
 											return (
 												<tr key={index}>
 													<td scope="row" className="text-center">
-														<img src={item.photo.thumb} id="pictures" />
+														<img src={item.photo.thumb} id="pictures" className="pr-2" />
 														{item.food_name}
 													</td>
 													<td scope="row">
