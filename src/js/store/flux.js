@@ -185,7 +185,10 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						let common = data.common.map((item, index) => {
-							return item.food_name;
+							return {
+								food: item.food_name,
+								pic: item.photo.thumb
+							};
 						});
 
 						setStore({ common: common });
@@ -201,7 +204,10 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						let branded = data.branded.map((item, index) => {
-							return item.food_name;
+							return {
+								food: item.food_name,
+								pic: item.photo.thumb
+							};
 						});
 						setStore({ branded: branded });
 					});
