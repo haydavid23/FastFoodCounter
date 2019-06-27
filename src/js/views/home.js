@@ -87,12 +87,22 @@ export class Home extends React.Component {
 									<Typeahead
 										ref={typeahead => (this.typeahead = typeahead)}
 										className="w-25 d-inline-block search"
-										labelKey="name"
+										labelKey="food"
+										align="justify"
 										placeholder="Choose your Meal"
 										options={store.common.concat(store.branded)}
+										renderMenu={(results, menuProps) => (
+											<Menu {...menuProps}>
+												{results.map((result, index) => (
+													<MenuItem option={result} position={index} key={index}>
+														{<img src={result.pic} />} {result.food}
+													</MenuItem>
+												))}
+											</Menu>
+										)}
 										id="food"
 										onChange={selected => {
-											this.setState({ select: selected[0] });
+											this.setState({ select: selected[0].food });
 										}}
 									/>
 									<Button
