@@ -104,9 +104,8 @@ const getState = ({ getStore, setStore }) => {
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
 				const store = getStore();
-				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person", {
+				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/person", {
 					method: "POST",
-					mode: "no-cors",
 
 					headers: {
 						"Content-Type": "application/json"
@@ -128,7 +127,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			jwtToken: (username, password) => {
-				fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/login", {
+				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/login", {
 					method: "POST",
 
 					headers: {

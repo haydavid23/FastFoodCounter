@@ -106,7 +106,7 @@ export class Demo extends React.Component {
 										animated={true}
 										now={store.totalCalBurned}
 										key={3}
-										label={"Total Calories Burned: " + store.totalCalBurned}
+										label={"Total Cal Burned: " + store.totalCalBurned}
 									/>
 								</ProgressBar>
 								;
