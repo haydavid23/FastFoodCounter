@@ -8,7 +8,7 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Footer } from "./component/footer";
 import "../styles/home.scss";
-import { Modal } from "./component/modallogin";
+import Modal from "./component/modallogin";
 //create your first component
 export class Layout extends React.Component {
 	constructor() {

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import "../../styles/modallog.scss";
 import { Route, Redirect } from "react-router";
 
-export class Modal extends React.Component {
+class Modal extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -81,16 +81,18 @@ export class Modal extends React.Component {
 												</Col>
 											</Form.Group>
 											<div>
-												<Link to="/demo">
-													<button
-														type="button"
-														className="btn btn-primary w-100"
-														onClick={() =>
-															actions.jwtToken(this.state.username, this.state.password)
-														}>
-														Login
-													</button>
-												</Link>
+												<button
+													type="button"
+													className="btn btn-primary w-100"
+													onClick={() => {
+														actions.jwtToken(
+															this.state.username,
+															this.state.password,
+															this.props.history
+														);
+													}}>
+													Login
+												</button>
 											</div>
 										</Form>
 									</div>
@@ -123,3 +125,5 @@ Modal.defaultProps = {
 	show: false,
 	onClose: null
 };
+
+export default withRouter(Modal);

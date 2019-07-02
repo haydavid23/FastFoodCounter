@@ -3,7 +3,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext.js";
-import { Modal } from "../component/modallogin";
+import Modal from "../component/modallogin";
 import { Select } from "../component/dropdown";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";

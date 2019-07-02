@@ -3,6 +3,7 @@ import React from "react";
 import injectContext from "../store/appContext.js";
 import Form from "react-bootstrap/FormGroup";
 import { StaticRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 const getState = ({ getStore, setStore }) => {
 	return {
@@ -126,7 +127,8 @@ const getState = ({ getStore, setStore }) => {
 				setStore({ store });
 			},
 
-			jwtToken: (username, password) => {
+			jwtToken: (username, password, route) => {
+				const store = getStore();
 				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/login", {
 					method: "POST",
 
@@ -144,6 +146,11 @@ const getState = ({ getStore, setStore }) => {
 						setStore({
 							jwtToken: res
 						});
+						if (store.jwtToken.msg !== "Bad username or password") {
+							route.push("/demo");
+						} else if (store.jwtToken.msg == "Bad username or password") {
+							alert("Bad username or password");
+						}
 					});
 			},
 
