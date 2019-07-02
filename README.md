@@ -1,7 +1,7 @@
 # Purpose
 
 
-A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating and to promote an active lifestyle incoporating "gymless" workout routine.
+A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating and to promote an active lifestyle incorporating "gymless" workout routine.
 
 
 

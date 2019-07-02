@@ -146,6 +146,7 @@ const getState = ({ getStore, setStore }) => {
 						setStore({
 							jwtToken: res
 						});
+
 						if (store.jwtToken.msg !== "Bad username or password") {
 							route.push("/demo");
 						} else if (store.jwtToken.msg == "Bad username or password") {
