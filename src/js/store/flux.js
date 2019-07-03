@@ -288,13 +288,13 @@ const getState = ({ getStore, setStore }) => {
 				setStore({
 					store: store,
 					totalCal: newTotal,
+					caloriesBurned: store.caloriesBurned.filter((vai, i) => i !== index),
 					totalCalBurned: store.caloriesBurned.reduce(
-						(accumulator, currentValue) => accumulator + currentValue,
+						(accumulator, currentValue) => store.totalCalBurned - store.caloriesBurned[index],
 						0
 					),
 					selectedFoods: store.selectedFoods.filter((vai, i) => i !== index),
 					foodCatalog: store.foodCatalog.filter((vai, i) => i !== index)
-					//caloriesBurned: store.caloriesBurned.filter((vai, i) => i !== index)
 				});
 			},
 
