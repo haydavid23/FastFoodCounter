@@ -13,6 +13,7 @@ const getState = ({ getStore, setStore }) => {
 			workoutIndex: "",
 			caloriesBurned: [],
 			newUser: [],
+			tempLoggedUser: null,
 			tableContent: "",
 			query: "",
 			calories: "",
@@ -22,7 +23,7 @@ const getState = ({ getStore, setStore }) => {
 			selected: [],
 			foodCatalog: [],
 			selectedFoods: [],
-			jwtToken: [],
+			jwtToken: null,
 			day: new Date(),
 			previousDay: "",
 			months: [
@@ -130,6 +131,10 @@ const getState = ({ getStore, setStore }) => {
 
 			jwtToken: (username, password, route) => {
 				const store = getStore();
+				let loggedUser = store.newUser.find(item => {
+					return item.username == username;
+				});
+				console.log(loggedUser);
 				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/login", {
 					method: "POST",
 
@@ -144,14 +149,21 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 
 					.then(res => {
+						console.log(res);
 						setStore({
-							jwtToken: res
+							jwtToken: res,
+							tempLoggedUser: loggedUser
 						});
 
 						if (store.jwtToken.msg !== "Bad username or password") {
 							route.push("/demo");
+							console.log(store.jwtToken.msg);
 						} else if (store.jwtToken.msg == "Bad username or password") {
 							alert("Bad username or password");
+							console.log(store.jwtToken.msg);
+						} else if (store.jwtToken.msg == "Missing username parameter") {
+							alert("Please Enter the Username");
+							console.log(store.jwtToken.msg);
 						}
 					});
 			},

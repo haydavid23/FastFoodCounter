@@ -23,7 +23,7 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			fetch("https://3000-a5cd9062-b8cd-4461-9054-26b4117dc4d6.ws-us0.gitpod.io/person")
+			fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/person")
 				.then(response => response.json())
 
 				.then(data => {
