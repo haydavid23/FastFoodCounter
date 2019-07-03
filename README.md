@@ -27,7 +27,7 @@ JWT login authentication.
 Create a database (using flask) with more alternative workouts.
 Scan meals consumed using barcode techonology to facilitate user's interactive
 
-Live Sample : https://media.giphy.com/media/SXko8RE6WbMnUPL8hW/giphy.gif
+Live Sample : https://media.giphy.com/media/SXko8RE6WbMnUPL8hW/source.mp4
 
 
 
