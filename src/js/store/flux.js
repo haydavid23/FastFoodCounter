@@ -101,6 +101,7 @@ const getState = ({ getStore, setStore }) => {
 						totalCalBurned: store.totalCalBurned - cal
 					});
 				}
+				console.log(store.selectedFoods);
 			},
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
@@ -251,12 +252,10 @@ const getState = ({ getStore, setStore }) => {
 							setStore({
 								foodCatalog: foodCatalog,
 								selectedFoods: selectedFoods.map((f, i) => {
-									if (i !== store.workoutIndex) {
-										let food = Object.assign({}, f);
-										if (!food.burned) {
-											food.burned = 0;
-											return food;
-										}
+									let food = Object.assign({}, f);
+									if (!food.burned) {
+										food.burned = 0;
+										return food;
 									}
 
 									return f;
@@ -280,9 +279,9 @@ const getState = ({ getStore, setStore }) => {
 
 			delButton: (item, index) => {
 				const store = getStore();
-				store.selectedFoods.splice(index, 1);
-				store.foodCatalog.splice(index, 1);
-				store.caloriesBurned.splice(index, 1);
+				// store.selectedFoods.splice(index, 1);
+				// store.foodCatalog.splice(index, 1);
+				// store.caloriesBurned.splice(index, 1);
 
 				let newTotal = store.totalCal - item.nf_calories;
 
@@ -292,7 +291,10 @@ const getState = ({ getStore, setStore }) => {
 					totalCalBurned: store.caloriesBurned.reduce(
 						(accumulator, currentValue) => accumulator + currentValue,
 						0
-					)
+					),
+					selectedFoods: store.selectedFoods.filter((vai, i) => i !== index),
+					foodCatalog: store.foodCatalog.filter((vai, i) => i !== index)
+					//caloriesBurned: store.caloriesBurned.filter((vai, i) => i !== index)
 				});
 			},
 
