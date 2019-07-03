@@ -4,7 +4,7 @@
 A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating and to promote an active lifestyle incorporating "gymless" workout routine.
 
 
-
+Live Sample : https://media.giphy.com/media/SXko8RE6WbMnUPL8hW/source.mp4
 
 ### Technologies used:
 - React js, Bootstrap, CSS, APIs, Python, Flask.
@@ -27,7 +27,7 @@ JWT login authentication.
 Create a database (using flask) with more alternative workouts.
 Scan meals consumed using barcode techonology to facilitate user's interactive
 
-Live Sample : https://media.giphy.com/media/SXko8RE6WbMnUPL8hW/source.mp4
+
 
 
 
