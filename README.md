@@ -3,7 +3,7 @@
 
 A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating and to promote an active lifestyle incorporating "gymless" workout routine.
 
-![demo](https://cdn.loom.com/assets/img/logo/loom-logo-921e25d698a11d4145192da482344625.svg)
+![demo](https://media.giphy.com/media/iDxqkIdXxShBVIAVZq/giphy.gif)
 
 ### Technologies used:
 - React js, Bootstrap, CSS, APIs, Python, Flask.
