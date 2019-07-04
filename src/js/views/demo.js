@@ -67,7 +67,7 @@ export class Demo extends React.Component {
 										)}
 										id="food"
 										onChange={selected => {
-											this.setState({ select: selected[0].food });
+											this.setState({ select: selected });
 										}}
 									/>
 									<Button

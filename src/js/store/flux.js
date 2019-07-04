@@ -240,7 +240,7 @@ const getState = ({ getStore, setStore }) => {
 				if (value == "") {
 					alert("Please Select a Meal");
 				} else {
-					let tablecontent = selected;
+					let tablecontent = selected[0].food;
 					setStore({ tableContent: tablecontent });
 
 					fetch(" https://trackapi.nutritionix.com/v2/natural/nutrients", {
