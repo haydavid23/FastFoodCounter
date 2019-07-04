@@ -14,6 +14,7 @@ import FormControl from "react-bootstrap/FormControl";
 import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
+import { LoggedMainNav } from "../component/loggedMainNav.js";
 
 export class Home extends React.Component {
 	constructor(props) {
@@ -31,7 +32,11 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container">
-								<Mainnav onDelete={() => this.setState({ showModal: true })} />
+								{!store.jwtToken ? (
+									<Mainnav onDelete={() => this.setState({ showModal: true })} />
+								) : (
+									<LoggedMainNav onDelete={() => this.setState({ showModal: true })} />
+								)}
 								<br />
 								<br />
 								<br />
