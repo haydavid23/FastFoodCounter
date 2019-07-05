@@ -8,6 +8,7 @@ import { Select } from "../component/dropdown";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import { Tablemain } from "../component/tablemain.js";
+import { MainTableRes } from "../component/maintableres.js";
 import { Mainnav } from "../component/mainnav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -128,7 +129,7 @@ export class Home extends React.Component {
 									</Button>
 								</div>
 								<div className="container">
-									<Tablemain />
+									<MainTableRes />
 								</div>
 								<div className="jumbotron bg-danger p-3" id="jumbo2">
 									<p className="display-8 text-white text-center">

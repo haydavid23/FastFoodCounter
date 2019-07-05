@@ -8,6 +8,7 @@ import FormControl from "react-bootstrap/FormControl";
 import ListGroup from "react-bootstrap/ListGroup";
 import { WorkoutsUser } from "../component/workoutsUser.js";
 import { Context } from "../store/appContext.js";
+import Table from "react-bootstrap/Table";
 
 export class Tableuser extends React.Component {
 	constructor() {
@@ -24,7 +25,7 @@ export class Tableuser extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container d-inline">
-								<table className="table table-bordered table-dark mt-auto w-100" id="table">
+								<Table responsive bordered striped hover variant="dark" size="sm">
 									<thead>
 										<tr>
 											<th scope="col" className="text-center">
@@ -52,14 +53,16 @@ export class Tableuser extends React.Component {
 											console.log(store.index2);
 											return (
 												<tr key={index}>
-													<td scope="row" className="text-center text-capitalize">
+													<td className="text-center text-capitalize">
 														<img src={item.photo.thumb} id="pictures" className="pr-2" />
 														{item.food_name}
 													</td>
-													<td scope="row">
+													<td>
 														<Form>
 															<Form.Group controlId="exampleForm.ControlSelect1">
 																<Form.Control
+																	className="text-dark bg-white"
+																	plaintext="true"
 																	name="qty"
 																	as="select"
 																	onChange={e => {
@@ -73,14 +76,14 @@ export class Tableuser extends React.Component {
 														</Form>
 													</td>
 
-													<td scope="row" className="text-center" id="cal">
+													<td className="text-center" id="cal">
 														{item.nf_calories}
 													</td>
 
 													<td scope="row">
 														<WorkoutsUser index={index} />
 													</td>
-													<td scope="row" className="text-center">
+													<td className="text-center">
 														{item.burned}
 														<i
 															id="x"
@@ -92,7 +95,7 @@ export class Tableuser extends React.Component {
 											);
 										})}
 									</tbody>
-								</table>
+								</Table>
 							</div>
 						);
 					}}
