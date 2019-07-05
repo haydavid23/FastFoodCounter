@@ -237,7 +237,9 @@ const getState = ({ getStore, setStore }) => {
 				const store = getStore();
 				console.log(value);
 
-				if (value == "") {
+				if (store.query == "") {
+					alert("Select a Fast Food Chain");
+				} else if (value == "") {
 					alert("Please Select a Meal");
 				} else {
 					let tablecontent = selected[0].food;

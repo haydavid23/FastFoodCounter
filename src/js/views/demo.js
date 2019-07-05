@@ -36,6 +36,10 @@ export class Demo extends React.Component {
 								</h1>
 								<div />
 								<div className="text-center">
+									<span className="text-capitalize font-weight-bold h2 " id="username">
+										Welcome, {store.tempLoggedUser.name}
+									</span>{" "}
+									<br />
 									<i className="fas fa-caret-square-left arrow" onClick={() => actions.changeDay()}>
 										{" "}
 									</i>{" "}

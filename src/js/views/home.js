@@ -114,7 +114,11 @@ export class Home extends React.Component {
 										type="submit"
 										className="d-inline-block"
 										onClick={() =>
-											actions.addFood(this.state.select, this.typeahead.getInstance().clear())
+											actions.addFood(
+												this.state.select,
+												this.typeahead.getInstance().clear(),
+												this.typeahead.getInstance().getInput().value
+											)
 										}>
 										Add Food Item
 									</Button>
