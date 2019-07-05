@@ -99,7 +99,11 @@ export class Home extends React.Component {
 										renderMenu={(results, menuProps) => (
 											<Menu {...menuProps}>
 												{results.map((result, index) => (
-													<MenuItem option={result} position={index} key={index}>
+													<MenuItem
+														option={result}
+														position={index}
+														key={index}
+														className="text-capitalize">
 														{<img src={result.pic} />} {result.food}
 													</MenuItem>
 												))}

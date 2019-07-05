@@ -48,7 +48,7 @@ export class Tablemain extends React.Component {
 										{store.selectedFoods.map((item, index) => {
 											return (
 												<tr key={index}>
-													<td scope="row" className="text-center">
+													<td scope="row" className="text-center text-capitalize">
 														<img src={item.photo.thumb} id="pictures" className="pr-2" />
 														{item.food_name}
 													</td>
