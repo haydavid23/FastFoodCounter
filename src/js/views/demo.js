@@ -105,7 +105,7 @@ export class Demo extends React.Component {
 										animated={true}
 										now={store.totalCal}
 										key={1}
-										label={store.totalCal <= 0 ? "" : "Total Cal: " + store.totalCal}
+										label={store.totalCal < 1 ? "" : "Total Cal: " + Math.round(store.totalCal)}
 									/>
 
 									<ProgressBar

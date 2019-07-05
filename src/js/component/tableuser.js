@@ -77,7 +77,7 @@ export class Tableuser extends React.Component {
 													</td>
 
 													<td className="text-center" id="cal">
-														{item.nf_calories}
+														{Math.round(item.nf_calories)}
 													</td>
 
 													<td scope="row">
