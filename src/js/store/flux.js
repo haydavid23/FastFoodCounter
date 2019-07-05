@@ -152,7 +152,9 @@ const getState = ({ getStore, setStore }) => {
 						console.log(res);
 						setStore({
 							jwtToken: res,
-							tempLoggedUser: loggedUser
+							tempLoggedUser: loggedUser,
+							selectedFoods: [],
+							totalCal: 0
 						});
 
 						if (store.jwtToken.msg !== "Bad username or password") {
