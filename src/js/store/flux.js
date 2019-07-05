@@ -152,20 +152,25 @@ const getState = ({ getStore, setStore }) => {
 						console.log(res);
 						setStore({
 							jwtToken: res,
-							tempLoggedUser: loggedUser,
-							selectedFoods: [],
-							totalCal: 0
+							tempLoggedUser: loggedUser
 						});
 
-						if (store.jwtToken.msg !== "Bad username or password") {
-							route.push("/demo");
-							console.log(store.jwtToken.msg);
-						} else if (store.jwtToken.msg == "Bad username or password") {
+						if (store.jwtToken.msg == "Bad username or password") {
 							alert("Bad username or password");
-							console.log(store.jwtToken.msg);
-						} else if (store.jwtToken.msg == "Missing username parameter") {
-							alert("Please Enter the Username");
-							console.log(store.jwtToken.msg);
+						} else if (
+							store.jwtToken.msg == "Missing username parameter" ||
+							store.jwtToken.msg == "Missing password parameter"
+						) {
+							alert("Please Enter Username AND/OR Password");
+						} else if (
+							username == store.tempLoggedUser.username &&
+							password == store.tempLoggedUser.password
+						) {
+							route.push("/demo"),
+								setStore({
+									selectedFoods: [],
+									totalCal: 0
+								});
 						}
 					});
 			},
