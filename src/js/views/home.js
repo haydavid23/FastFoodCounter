@@ -33,7 +33,7 @@ export class Home extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container">
-								{!store.jwtToken ? (
+								{!store.tempLoggedUser ? (
 									<Mainnav onDelete={() => this.setState({ showModal: true })} />
 								) : (
 									<LoggedMainNav onDelete={() => this.setState({ showModal: true })} />
