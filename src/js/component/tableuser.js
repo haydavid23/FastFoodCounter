@@ -52,7 +52,7 @@ export class Tableuser extends React.Component {
 											console.log(store.index2);
 											return (
 												<tr key={index}>
-													<td scope="row" className="text-center">
+													<td scope="row" className="text-center text-capitalize">
 														<img src={item.photo.thumb} id="pictures" className="pr-2" />
 														{item.food_name}
 													</td>
