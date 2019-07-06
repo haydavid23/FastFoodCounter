@@ -132,7 +132,7 @@ const getState = ({ getStore, setStore }) => {
 			jwtToken: (username, password, route) => {
 				const store = getStore();
 				let loggedUser = store.newUser.find(item => {
-					return item.username == username;
+					return item.username == username && item.password == password;
 				});
 				console.log(loggedUser);
 				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/login", {
