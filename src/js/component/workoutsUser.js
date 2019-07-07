@@ -5,6 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import { Context } from "../store/appContext.js";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export class WorkoutsUser extends React.Component {
 	constructor(props, context) {
@@ -33,7 +34,12 @@ export class WorkoutsUser extends React.Component {
 								<div id="example-collapse-text">
 									<ListGroup variant="flush">
 										<ListGroup.Item variant="dark">
-											300 sit-ups
+											<a
+												href={"https://media.giphy.com/media/35EH7kLQiMM1YWYmUI/giphy.gif"}
+												target="_blank"
+												rel="noopener noreferrer">
+												300 sit-ups
+											</a>
 											<Form.Check
 												type="checkbox"
 												className="d-inline"

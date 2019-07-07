@@ -40,9 +40,7 @@ export class Demo extends React.Component {
 										Welcome, {store.tempLoggedUser.name}
 									</span>{" "}
 									<br />
-									<i className="fas fa-caret-square-left arrow" onClick={() => actions.changeDay()}>
-										{" "}
-									</i>{" "}
+									<i className="fas fa-caret-square-left arrow"> </i>{" "}
 									<span className="font-weight-bold">
 										{" "}
 										{store.months[store.day.getMonth()]} {store.day.getDate()},{" "}
