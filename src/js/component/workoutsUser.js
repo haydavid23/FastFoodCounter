@@ -50,7 +50,12 @@ export class WorkoutsUser extends React.Component {
 											/>
 										</ListGroup.Item>
 										<ListGroup.Item variant="dark">
-											15 min run
+											<a
+												href={"https://media.giphy.com/media/23hPPMRgPxbNBlPQe3/giphy.gif"}
+												target="_blank"
+												rel="noopener noreferrer">
+												100 Burpees
+											</a>
 											<Form.Check
 												type="checkbox"
 												className="d-inline"
@@ -60,7 +65,12 @@ export class WorkoutsUser extends React.Component {
 											/>
 										</ListGroup.Item>
 										<ListGroup.Item variant="dark">
-											500 push-ups{" "}
+											<a
+												href={"https://media.giphy.com/media/tsTsgT7v6wy5hYXI9U/giphy.gif"}
+												target="_blank"
+												rel="noopener noreferrer">
+												500 push-ups{" "}
+											</a>
 											<Form.Check
 												type="checkbox"
 												className="d-inline"

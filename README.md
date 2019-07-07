@@ -20,11 +20,8 @@ Animated progress Bar that displays total calories consumed vs total calories bu
 ## Currently working on these additions :
 
 Monthly and Weekly views to help user track caloric consumption and workouts completed.
-GIF link of each exercise to help user complete the exercise shown.
-Show picture of meal seached on the typeahead.
 Provide a healthier option (from the same fast food chain selected) for meals consumed.
 Ability for the use to see previous days information.
-JWT login authentication.
 Create a database (using flask) with more alternative workouts.
 Scan meals consumed using barcode techonology to facilitate user's interactive
 
