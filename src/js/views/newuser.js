@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "../component/modallogin";
 import { Tableuser } from "../component/tableuser.js";
 import "../../styles/newuser.scss";
 import { Context } from "../store/appContext.js";
@@ -38,6 +39,10 @@ export class New extends React.Component {
 								<br />
 								<br />
 								<br />
+								<Modal
+									show={this.state.showModal}
+									onClose={() => this.setState({ showModal: false })}
+								/>
 								<h1 className="text-center">REGISTER NOW!</h1>
 								<Form className="bg-dark text-white w-50 mx-auto p-4" id="register">
 									<Form.Row>
