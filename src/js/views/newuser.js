@@ -33,7 +33,7 @@ export class New extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container">
-								<Mainnav />
+								<Mainnav onDelete={() => this.setState({ showModal: true })} />
 								<br />
 								<br />
 								<br />

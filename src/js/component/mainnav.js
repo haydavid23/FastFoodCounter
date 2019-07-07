@@ -13,10 +13,10 @@ export class Mainnav extends React.Component {
 		return (
 			<div>
 				<Navbar collapseOnSelect bg="dark" variant="dark" className="fixed-top">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
-					<Navbar.Brand href="#home" className="pl-2">
-						Fast Food Counter
-					</Navbar.Brand>
+					<Link to="/">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDNltA46MJJv7Ls4zALdCgrSKL-mELlzAokLFv8jsfBveueOg" />
+					</Link>
+					<Navbar.Brand className="pl-2">Fast Food Counter</Navbar.Brand>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav" />
 
