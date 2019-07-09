@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			newUserRes: "",
 			totalCalBurned: "",
 			tableIndex: "",
 			workoutIndex: "",
@@ -105,7 +106,7 @@ const getState = ({ getStore, setStore }) => {
 				console.log(store.selectedFoods);
 			},
 
-			newUser: (name, last_name, email, password, address, city, state, zip_code, username) => {
+			newUser: (name, last_name, email, password, address, city, state, zip_code, username, validated, route) => {
 				const store = getStore();
 				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/person", {
 					method: "POST",
@@ -126,7 +127,10 @@ const getState = ({ getStore, setStore }) => {
 						username: username
 					})
 				});
-				setStore({ store });
+
+				//if (validated == true) {
+				//	route.push("/");
+				//}
 			},
 
 			jwtToken: (username, password, route) => {
