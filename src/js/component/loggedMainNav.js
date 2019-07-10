@@ -33,7 +33,7 @@ export class LoggedMainNav extends React.Component {
 							<Dropdown.Item href="#/action-1">Monthly View</Dropdown.Item>
 							<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
 							<Dropdown.Divider />
-							<Dropdown.Item href="/">Sign Out</Dropdown.Item>
+							<Dropdown.Item href="https://haydavid23.github.io/FastFoodCounter/">Sign Out</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
 				</Navbar>
