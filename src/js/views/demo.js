@@ -9,13 +9,15 @@ import { Usernav } from "../component/usernav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Select } from "../component/dropdown";
+import Alert from "react-bootstrap/Alert";
 
 export class Demo extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			showModal: false,
-			select: ""
+			select: "",
+			showAlert: false
 		};
 	}
 
@@ -79,13 +81,14 @@ export class Demo extends React.Component {
 									<Button
 										type="submit"
 										className="d-inline-block"
-										onClick={() =>
+										onClick={() => {
 											actions.addFood(
 												this.state.select,
 												this.typeahead.getInstance().clear(),
 												this.typeahead.getInstance().getInput().value
-											)
-										}>
+											),
+												this.setState({ showAlert: true });
+										}}>
 										Add Food Item
 									</Button>
 								</div>
@@ -96,6 +99,13 @@ export class Demo extends React.Component {
 								<br />
 								<br />
 								<br />
+								<Alert
+									variant="danger"
+									className="w-50 mx-auto text-center"
+									show={this.state.showAlert}>
+									GET MOVING AND BURN SOME CALORIES!
+								</Alert>
+								;
 								<ProgressBar id="bar">
 									<ProgressBar
 										className="mw-100"

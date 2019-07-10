@@ -4,6 +4,7 @@ import injectContext from "../store/appContext.js";
 import Form from "react-bootstrap/FormGroup";
 import { StaticRouter } from "react-router";
 import { withRouter } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
 
 const getState = ({ getStore, setStore }) => {
 	return {
@@ -291,6 +292,7 @@ const getState = ({ getStore, setStore }) => {
 								totalCal: store.selectedFoods.reduce((a, { nf_calories }) => a + nf_calories, 0)
 							});
 						});
+
 					document.querySelector("#drop").value = "----";
 
 					clear;
