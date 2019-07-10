@@ -109,7 +109,7 @@ const getState = ({ getStore, setStore }) => {
 
 			newUser: (name, last_name, email, password, address, city, state, zip_code, username, validated, route) => {
 				const store = getStore();
-				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/person", {
+				fetch("https://fastfoodcounter.herokuapp.com/person", {
 					method: "POST",
 
 					headers: {
@@ -140,7 +140,7 @@ const getState = ({ getStore, setStore }) => {
 					return item.username == username && item.password == password;
 				});
 				console.log(loggedUser);
-				fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/login", {
+				fetch("https://fastfoodcounter.herokuapp.com/login", {
 					method: "POST",
 
 					headers: {

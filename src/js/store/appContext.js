@@ -23,7 +23,7 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			fetch("https://3000-cef81864-8402-4f4c-9e19-e04d37a9d2c0.ws-us0.gitpod.io/person")
+			fetch("https://fastfoodcounter.herokuapp.com/person")
 				.then(response => response.json())
 
 				.then(data => {
