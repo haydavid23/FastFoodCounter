@@ -15,7 +15,7 @@ import FormControl from "react-bootstrap/FormControl";
 import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
-import { LoggedMainNav } from "../component/loggedMainNav.js";
+import LoggedMainNav from "../component/loggedMainNav.js";
 
 export class Home extends React.Component {
 	constructor(props) {

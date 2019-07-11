@@ -334,6 +334,12 @@ const getState = ({ getStore, setStore }) => {
 					store: store,
 					totalCal: store.totalCal - item.nf_calories
 				});
+			},
+
+			signOut: route => {
+				const store = getStore();
+				setStore({ tempLoggedUser: "" });
+				route.push("/");
 			}
 		}
 	};

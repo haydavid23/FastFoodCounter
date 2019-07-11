@@ -5,7 +5,7 @@ import { Context } from "../store/appContext.js";
 import { Typeahead, Menu, menuItemContainer, MenuItem } from "react-bootstrap-typeahead";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
-import { Usernav } from "../component/usernav.js";
+import Usernav from "../component/usernav.js";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import { Select } from "../component/dropdown";

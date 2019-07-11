@@ -9,8 +9,9 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import "../../styles/usernav.scss";
 import { Context } from "../store/appContext.js";
+import { withRouter } from "react-router";
 
-export class Usernav extends React.Component {
+class Usernav extends React.Component {
 	render() {
 		return (
 			<Context.Consumer>
@@ -35,7 +36,9 @@ export class Usernav extends React.Component {
 										<Dropdown.Item href="#/action-1">Monthly View</Dropdown.Item>
 										<Dropdown.Item href="#/action-2">Weekly View</Dropdown.Item>
 										<Dropdown.Divider />
-										<Dropdown.Item href="/">Sign Out</Dropdown.Item>
+										<Dropdown.Item onClick={() => actions.signOut(this.props.history)}>
+											Sign Out
+										</Dropdown.Item>
 									</Dropdown.Menu>
 								</Dropdown>
 							</Navbar>
@@ -49,5 +52,8 @@ export class Usernav extends React.Component {
 }
 
 Usernav.propTypes = {
-	onDelete: PropTypes.func
+	onDelete: PropTypes.func,
+	history: PropTypes.object
 };
+
+export default withRouter(Usernav);
