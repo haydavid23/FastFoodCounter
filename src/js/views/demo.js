@@ -86,8 +86,7 @@ export class Demo extends React.Component {
 												this.state.select,
 												this.typeahead.getInstance().clear(),
 												this.typeahead.getInstance().getInput().value
-											),
-												this.setState({ showAlert: true });
+											);
 										}}>
 										Add Food Item
 									</Button>
@@ -99,13 +98,15 @@ export class Demo extends React.Component {
 								<br />
 								<br />
 								<br />
-								<Alert
-									variant="danger"
-									className="w-50 mx-auto text-center"
-									show={this.state.showAlert}>
-									GET MOVING AND BURN SOME CALORIES!
-								</Alert>
-								;
+								{store.totalCal > 0 ? (
+									<Alert variant="danger" className="w-50 mx-auto text-center" show={true}>
+										GET MOVING AND BURN SOME CALORIES!
+									</Alert>
+								) : (
+									<Alert variant="danger" className="w-50 mx-auto text-center" show={false}>
+										GET MOVING AND BURN SOME CALORIES!
+									</Alert>
+								)}
 								<ProgressBar id="bar">
 									<ProgressBar
 										className="mw-100"
