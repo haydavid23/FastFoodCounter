@@ -23,7 +23,7 @@ Monthly and Weekly views to help user track caloric consumption and workouts com
 Provide a healthier option (from the same fast food chain selected) for meals consumed.
 Ability for the use to see previous days information.
 Create a database (using flask) with more alternative workouts.
-Scan meals consumed using barcode techonology to facilitate user's interactive
+Ability to Scan meals consumed using barcode techonology to facilitate user's interactive
 
 
 
